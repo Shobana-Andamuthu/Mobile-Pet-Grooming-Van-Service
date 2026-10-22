@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Pet Owner Portal Login | Velvet Paws Mobile Pet Grooming</title>
+  <meta name="description" content="Sign in to your Velvet Paws pet parent portal to manage upcoming mobile grooming appointments, view grooming history, and track van arrival.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Immediate Theme & Direction Script to Prevent FOUC -->
+  <script>
+    (function() {
+      try {
+        var savedTheme = localStorage.getItem('paw_grooming_theme') || 'light';
+        var savedDir = localStorage.getItem('paw_grooming_dir') || 'ltr';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.documentElement.setAttribute('dir', savedDir);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="auth-page">
+
+  <!-- Attractive Luxury Pet Van Page Preloader -->
+  <div id="page-preloader" class="page-preloader" aria-hidden="true">
+    <div class="preloader-content">
+      <div class="preloader-van-wrap">
+        <div class="preloader-pulse-ring"></div>
+        <div class="preloader-icon-box">
+          <svg class="preloader-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 18H3c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2h12v12H5z"></path>
+            <path d="M15 9h4.6a2 2 0 0 1 1.8 1.1L23 14v2c0 1.1-.9 2-2 2h-2"></path>
+            <circle cx="7" cy="18" r="2.5"></circle>
+            <circle cx="17" cy="18" r="2.5"></circle>
+            <circle class="preloader-bubble bubble-1" cx="12" cy="4" r="1.5" fill="currentColor"></circle>
+            <circle class="preloader-bubble bubble-2" cx="15" cy="2" r="1" fill="currentColor"></circle>
+          </svg>
+        </div>
+      </div>
+      <div class="preloader-brand">
+        <span class="preloader-title">Velvet<span>Van</span></span>
+        <span class="preloader-subtitle">Luxury Mobile Pet Spa</span>
+      </div>
+      <div class="preloader-progress-track">
+        <div class="preloader-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top Navigation Bar (Image 3 Header) -->
+  <header class="auth-topbar">
+    <a href="index.html" class="auth-topbar-brand" aria-label="Velvet Paws Home">
+      <img src="assets/images/logo.svg" alt="Velvet Paws Emblem" class="brand-logo-img" width="36" height="36">
+      <span class="brand-name">Velvet<span>Paws</span></span>
+    </a>
+
+    <div class="auth-topbar-actions">
+      <!-- RTL / LTR Toggle -->
+      <button class="auth-icon-btn" id="rtl-toggle" data-action="toggle-rtl" title="Switch RTL/LTR" aria-label="Toggle Direction">
+        <svg class="icon-arrow-flip" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 8h16M4 8l4-4M4 8l4 4M20 16H4m16 0l-4-4m4 4l-4 4"></path>
+        </svg>
+      </button>
+
+      <!-- Light / Dark Toggle -->
+      <button class="auth-icon-btn" id="theme-toggle" data-action="toggle-theme" title="Switch Light/Dark" aria-label="Toggle Theme">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Split Screen Authentication Layout (Matching Image 3) -->
+  <main class="auth-split-wrapper">
+
+    <!-- Left Side: Dark Branded Showcase Panel -->
+    <section class="auth-showcase-panel" aria-label="Velvet Paws Portal Features">
+      <div class="auth-showcase-content">
+        <span class="auth-gateway-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          PET PARENT CLIENT GATEWAY
+        </span>
+
+        <h1 class="auth-showcase-title">
+          Doorstep Spa Care &amp; Real-Time Van Dispatch
+        </h1>
+
+        <p class="auth-showcase-lead">
+          Access live mobile van arrival windows, manage your pet’s custom breed styling preferences, review past grooming records, and schedule recurring wellness visits with zero car-ride stress.
+        </p>
+
+        <div class="auth-badges-row">
+          <div class="auth-badge-pill">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#DCE9DD" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span>100% Cage-Free Handling</span>
+          </div>
+
+          <div class="auth-badge-pill">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#DCE9DD" stroke-width="2">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+            </svg>
+            <span>Purified Hydrobath System</span>
+          </div>
+
+          <div class="auth-badge-pill">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#DCE9DD" stroke-width="2">
+              <rect x="1" y="3" width="15" height="13"></rect>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+            <span>GPS Live Van Dispatch</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right Side: Clean Form Panel & Floating Card -->
+    <section class="auth-form-panel" aria-label="Login Form">
+      <div class="auth-card">
+
+        <!-- Top Centered Icon Badge -->
+        <div class="auth-icon-badge" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+
+        <h2 class="auth-card-title">Client Portal Login</h2>
+        <p class="auth-card-subtitle">Enter your credentials to access your pet's grooming dashboard.</p>
+
+        <!-- Authentication Form -->
+        <form id="auth-login-form" novalidate>
+
+          <!-- Email Field -->
+          <div class="auth-form-group" id="group-login-email">
+            <label for="login-email" class="auth-form-label">Pet Parent Email *</label>
+            <div class="auth-input-wrapper">
+              <input type="email" id="login-email" class="auth-input" placeholder="sarah.jenkins@example.com" required autocomplete="email">
+            </div>
+            <span class="auth-field-error-msg" id="err-login-email">Please enter a valid email address.</span>
+          </div>
+
+          <!-- Password Field with Visibility Toggle -->
+          <div class="auth-form-group" id="group-login-password">
+            <label for="login-password" class="auth-form-label">Password *</label>
+            <div class="auth-input-wrapper">
+              <input type="password" id="login-password" class="auth-input" placeholder="Enter your password" required autocomplete="current-password">
+              <button type="button" class="auth-toggle-pwd" id="toggle-password-btn" aria-label="Toggle password visibility">
+                <!-- Eye Icon -->
+                <svg id="pwd-icon-show" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <!-- Eye-Off Icon (hidden by default) -->
+                <svg id="pwd-icon-hide" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                  <line x1="1" y1="1" x2="23" y2="23"></line>
+                </svg>
+              </button>
+            </div>
+            <span class="auth-field-error-msg" id="err-login-password">Password must be at least 6 characters.</span>
+          </div>
+
+          <!-- Remember Me & Forgot Password Row -->
+          <div class="auth-actions-row">
+            <label class="auth-remember-label">
+              <input type="checkbox" id="remember-me-checkbox" checked>
+              <span>Remember me</span>
+            </label>
+            <a href="#forgot" class="auth-forgot-link" id="forgot-password-link">Forgot Password?</a>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="auth-submit-btn" id="login-submit-btn">
+            <span>Sign In to Portal</span>
+            <span aria-hidden="true">&rarr;</span>
+          </button>
+
+          <!-- Divider -->
+          <div class="auth-divider">
+            <span>OR</span>
+          </div>
+
+          <!-- Social Demo Single-Sign-On -->
+          <button type="button" class="auth-social-btn" id="demo-google-login">
+            <svg width="18" height="18" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.65v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.14z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.27v3.15C3.25 21.36 7.35 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27a7.18 7.18 0 0 1 0-4.54V6.58H1.27a11.97 11.97 0 0 0 0 10.84l4.01-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.25 2.64 1.27 6.58l4.01 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
+            <span>Continue with Google</span>
+          </button>
+
+          <div class="auth-social-row">
+            <button type="button" class="auth-social-mini-btn" id="demo-apple-login">
+              <span> Apple</span>
+            </button>
+            <button type="button" class="auth-social-mini-btn" id="demo-ms-login">
+              <span>❖ Microsoft</span>
+            </button>
+            <button type="button" class="auth-social-mini-btn" id="demo-fb-login">
+              <span>f Facebook</span>
+            </button>
+          </div>
+
+          <!-- Switch to Register Link -->
+          <p class="auth-footer-prompt">
+            Don’t have a pet parent account? <a href="register.html">Create an Account</a>
+          </p>
+
+          <!-- Honest Demo Mode Notice -->
+          <div class="auth-demo-disclaimer">
+            <strong>(Front-End Demo Environment):</strong> Real backend database is not attached. Enter any valid email and 6+ character password to enter the interactive client dashboard.
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Script for Controls & Form Validation -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Password visibility toggle
+      const toggleBtn = document.getElementById('toggle-password-btn');
+      const pwdInput = document.getElementById('login-password');
+      const iconShow = document.getElementById('pwd-icon-show');
+      const iconHide = document.getElementById('pwd-icon-hide');
+
+      if (toggleBtn && pwdInput) {
+        toggleBtn.addEventListener('click', function() {
+          const isPwd = pwdInput.type === 'password';
+          pwdInput.type = isPwd ? 'text' : 'password';
+          iconShow.style.display = isPwd ? 'none' : 'block';
+          iconHide.style.display = isPwd ? 'block' : 'none';
+        });
+      }
+
+      // Login form validation & demo redirection
+      const form = document.getElementById('auth-login-form');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          let hasError = false;
+
+          const emailGroup = document.getElementById('group-login-email');
+          const emailInput = document.getElementById('login-email');
+          if (!emailInput.value.trim() || !emailInput.value.includes('@') || !emailInput.value.includes('.')) {
+            emailGroup.classList.add('has-error');
+            hasError = true;
+          } else {
+            emailGroup.classList.remove('has-error');
+          }
+
+          const pwdGroup = document.getElementById('group-login-password');
+          if (!pwdInput.value || pwdInput.value.length < 6) {
+            pwdGroup.classList.add('has-error');
+            hasError = true;
+          } else {
+            pwdGroup.classList.remove('has-error');
+          }
+
+          if (hasError) return;
+
+          // Record session state and redirect to dashboard
+          try {
+            sessionStorage.setItem('velvet_logged_in', 'true');
+            sessionStorage.setItem('velvet_user_email', emailInput.value.trim());
+          } catch(err) {}
+
+          window.location.href = 'dashboard.html';
+        });
+      }
+
+      // Demo Social Buttons directly sign in
+      ['demo-google-login', 'demo-apple-login', 'demo-ms-login', 'demo-fb-login'].forEach(function(id) {
+        const btn = document.getElementById(id);
+        if (btn) {
+          btn.addEventListener('click', function() {
+            try {
+              sessionStorage.setItem('velvet_logged_in', 'true');
+              sessionStorage.setItem('velvet_user_email', 'sarah.jenkins@example.com');
+            } catch(e) {}
+            window.location.href = 'dashboard.html';
+          });
+        }
+      });
+
+      // Forgot password demo alert
+      const forgotLink = document.getElementById('forgot-password-link');
+      if (forgotLink) {
+        forgotLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          alert('Demo Mode: A simulated password reset link has been dispatched to your email address.');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

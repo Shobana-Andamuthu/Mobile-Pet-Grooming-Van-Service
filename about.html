@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>About Us | Velvet Paws Mobile Pet Grooming Van Service</title>
+  <meta name="description" content="Learn about Velvet Paws, our compassionate doorstep grooming philosophy, custom Mercedes Sprinter spa van, and certified fear-free groomers dedicated to stress-free pet care.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Immediate Theme & Direction Script to Prevent FOUC -->
+  <script>
+    (function() {
+      try {
+        var savedTheme = localStorage.getItem('paw_grooming_theme') || 'light';
+        var savedDir = localStorage.getItem('paw_grooming_dir') || 'ltr';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.documentElement.setAttribute('dir', savedDir);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Google Fonts: Strictly 2 Font Families Max (Outfit + Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Attractive Luxury Pet Van Page Preloader -->
+  <div id="page-preloader" class="page-preloader" aria-hidden="true">
+    <div class="preloader-content">
+      <div class="preloader-van-wrap">
+        <div class="preloader-pulse-ring"></div>
+        <div class="preloader-icon-box">
+          <svg class="preloader-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 18H3c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2h12v12H5z"></path>
+            <path d="M15 9h4.6a2 2 0 0 1 1.8 1.1L23 14v2c0 1.1-.9 2-2 2h-2"></path>
+            <circle cx="7" cy="18" r="2.5"></circle>
+            <circle cx="17" cy="18" r="2.5"></circle>
+            <circle class="preloader-bubble bubble-1" cx="12" cy="4" r="1.5" fill="currentColor"></circle>
+            <circle class="preloader-bubble bubble-2" cx="15" cy="2" r="1" fill="currentColor"></circle>
+          </svg>
+        </div>
+      </div>
+      <div class="preloader-brand">
+        <span class="preloader-title">Velvet<span>Van</span></span>
+        <span class="preloader-subtitle">Luxury Mobile Pet Spa</span>
+      </div>
+      <div class="preloader-progress-track">
+        <div class="preloader-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SITE HEADER & NAVBAR (Sticky Top Navbar - Zero Announcement Bar)
+       ========================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        
+        <!-- Brand Logo -->
+        <a href="index.html" class="brand-logo" id="main-brand-logo" aria-label="Velvet Paws Mobile Pet Grooming Homepage">
+          <div class="brand-emblem-box" aria-hidden="true">
+            <img src="assets/images/logo.svg" alt="Velvet Paws Logo Emblem" width="40" height="40">
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">Velvet<span>Paws</span></span>
+            <span class="brand-tagline">MOBILE LUXURY SPA</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Menu (Visible only above 1366px) -->
+        <ul class="nav-menu" id="desktop-nav-menu">
+          <li class="nav-item nav-item-dropdown">
+            <a href="index.html" class="nav-link" id="nav-home-link" aria-haspopup="true" aria-expanded="false">
+              Home
+              <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+            <div class="dropdown-menu" aria-label="Home Variations">
+              <a href="index.html" class="dropdown-link">Home 1 (Van At Doorstep)</a>
+              <a href="home-2.html" class="dropdown-link">Home 2 (Pet Care Experience)</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="services.html" class="nav-link" id="nav-services-link">Services</a>
+          </li>
+          <li class="nav-item">
+            <a href="pricing.html" class="nav-link" id="nav-pricing-link">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link active" id="nav-about-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link" id="nav-contact-link">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link" id="nav-dashboard-link">Dashboard</a>
+          </li>
+        </ul>
+
+        <!-- Action Controls: RTL, Theme, Login, Book CTA & Hamburger -->
+        <div class="nav-actions">
+          
+          <!-- RTL / LTR Toggle Button -->
+          <button class="nav-circle-btn" id="rtl-toggle" data-action="toggle-rtl" title="Switch RTL/LTR" aria-label="Toggle Direction">
+            <svg class="icon-arrow-flip" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 8h16M4 8l4-4M4 8l4 4M20 16H4m16 0l-4-4m4 4l-4 4"></path>
+            </svg>
+          </button>
+
+          <!-- Light / Dark Theme Toggle Button -->
+          <button class="nav-circle-btn" id="theme-toggle" data-action="toggle-theme" title="Switch Theme" aria-label="Toggle Theme">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+
+          <!-- Login Button -->
+          <a href="login.html" class="nav-pill-btn nav-login-btn hide-on-tablet" id="nav-login-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            Login
+          </a>
+
+          <!-- Book Van Visit CTA Button -->
+          <a href="services.html#booking-form" class="nav-pill-btn hide-on-tablet" id="nav-book-btn">
+            Book Van Visit
+          </a>
+
+          <!-- Hamburger Button (Displayed on <= 1366px including iPad & iPad Pro) -->
+          <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="mobile-drawer">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+        </div>
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       RESPONSIVE SLIDE-OVER DRAWER (Active on Mobile, Tablets, iPad & iPad Pro)
+       ========================================================================== -->
+  <div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
+
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <a href="index.html" class="brand-logo" aria-label="Velvet Paws Homepage">
+        <div class="brand-emblem-box">
+          <img src="assets/images/logo.svg" alt="Velvet Paws Emblem" width="34" height="34">
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Velvet<span>Paws</span></span>
+          <span class="brand-tagline">MOBILE LUXURY SPA</span>
+        </div>
+      </a>
+      <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close navigation menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Quick Mode Controls in Drawer -->
+    <div class="drawer-quick-controls">
+      <button class="drawer-icon-btn" data-action="toggle-theme" id="drawer-theme-toggle" aria-label="Toggle Theme" title="Toggle Theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+
+      <button class="drawer-icon-btn" data-action="toggle-rtl" id="drawer-rtl-toggle" aria-label="Toggle Direction" title="Toggle Direction">
+        <svg class="icon-arrow-flip" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 8h16M4 8l4-4M4 8l4 4M20 16H4m16 0l-4-4m4 4l-4 4"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Drawer Navigation Links -->
+    <div class="drawer-body">
+      <nav class="drawer-menu">
+        <a href="index.html" class="drawer-link">
+          <span>Home</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+        <div class="drawer-subgroup">
+          <a href="index.html" class="drawer-sublink">• Home 1 (Van At Doorstep)</a>
+          <a href="home-2.html" class="drawer-sublink">• Home 2 (Pet Care Experience)</a>
+        </div>
+        <a href="services.html" class="drawer-link">
+          <span>Services</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+        <a href="pricing.html" class="drawer-link">
+          <span>Pricing</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+        <a href="about.html" class="drawer-link active">
+          <span>About</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+        <a href="contact.html" class="drawer-link">
+          <span>Contact</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+        <a href="dashboard.html" class="drawer-link">
+          <span>Dashboard</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Drawer Footer Actions -->
+    <div class="drawer-footer">
+      <div class="drawer-action-row">
+        <a href="login.html" class="btn btn-outline btn-pill" style="padding: 0.65rem 1rem; font-size: 0.88rem;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          Login
+        </a>
+        <a href="services.html#booking-form" class="btn btn-primary btn-pill" style="padding: 0.65rem 1rem; font-size: 0.88rem;">
+          Book Van
+        </a>
+      </div>
+
+      <div class="drawer-van-callout">
+        <h5>🚐 Dedicated 1-on-1 Care</h5>
+        <p>No noisy cage banks or car-ride stress. Complete luxury spa pampering right in your driveway.</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       MAIN CONTENT CONTAINER
+       ========================================================================== -->
+  <main id="main-content">
+
+    <!-- ==========================================================================
+         SECTION 1 — HERO INTRODUCING THE MOBILE GROOMING SERVICE (380px UNIFORM HEIGHT)
+         ========================================================================== -->
+    <section class="page-hero-header" id="about-hero">
+      <img src="assets/images/user/user_attach5_van_mission.jpg" alt="Attentive happy dog enjoying warm doorstep care" class="page-hero-bg" width="1400" height="380" loading="eager">
+      <div class="page-hero-overlay"></div>
+
+      <div class="container">
+        <div class="page-hero-content">
+          
+          <div class="page-breadcrumbs">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span style="color: #FFFFFF;">About Our Service</span>
+          </div>
+
+          <h1 class="page-hero-title">
+            The Story Behind Doorstep Pampering
+          </h1>
+
+          <p class="page-hero-desc">
+            We reimagined pet grooming to eliminate stressful car rides, loud salon cage banks, and multi-hour waiting times. Experience compassionate 1-on-1 care delivered right outside your home.
+          </p>
+
+          <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="#our-story" class="btn btn-primary btn-pill">
+              <span>Read Our Story</span>
+              <span>&rarr;</span>
+            </a>
+            <a href="#team" class="btn btn-outline btn-pill btn-outline-white">
+              <span>Meet The Groomers</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 2 — OUR STORY & WHY DOORSTEP GROOMING IS CONVENIENT
+         ========================================================================== -->
+    <section class="section" id="our-story">
+      <div class="container">
+        
+        <div class="about-story-grid">
+          
+          <!-- Left: Narrative -->
+          <div>
+            <span class="pill-badge">OUR FOUNDING MISSION</span>
+            <h2 class="section-title" style="margin-top: 0.85rem; margin-bottom: 1.25rem;">
+              Born Out of Love for Sensitive Pets
+            </h2>
+            <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-main); margin-bottom: 1.25rem;">
+              Like many dedicated pet parents, we hated dropping off our dogs at traditional salons. Seeing them tremble in noisy waiting rooms surrounded by dozens of barking dogs—only to sit in wire cages with loud air dryers for four to six hours—broke our hearts.
+            </p>
+            <p style="font-size: 0.96rem; line-height: 1.65; color: var(--text-muted); margin-bottom: 1.5rem;">
+              We realized there had to be a gentler, more dignified way. In 2021, we commissioned our first custom Mercedes Sprinter van: an ultra-clean, fully self-contained spa on wheels engineered specifically for calm 1-on-1 pampering. Today, our mobile salon brings purified heated water, gentle organic oatmeal washes, and certified fear-free styling directly to your home's driveway.
+            </p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+              <div>
+                <strong style="font-size: 1.35rem; color: var(--brand-forest); display: block; font-weight: 800;">100%</strong>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Cage-Free, 1-on-1 Care</span>
+              </div>
+              <div>
+                <strong style="font-size: 1.35rem; color: var(--brand-terracotta); display: block; font-weight: 800;">Zero</strong>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Car Travel or Traffic Stress</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Visual Media Box -->
+          <div>
+            <div class="story-media-box">
+              <img src="assets/images/user/user_attach5_van_mission.jpg" alt="Velvet Paws mobile grooming Mercedes Sprinter van doorstep visit with happy dog and owner" width="600" height="440" loading="lazy">
+              
+              <div class="story-badge-floating">
+                <h5>🚐 Doorstep Freedom</h5>
+                <p>Your pet returns inside your house relaxed, fresh, and happy in about 60 minutes.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 3 — GROOMING PHILOSOPHY & GENTLE PET HANDLING
+         ========================================================================== -->
+    <section class="section section-alt" id="philosophy">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="pill-badge terracotta">CORE PHILOSOPHY</span>
+          <h2 class="section-title">Compassion in Every Brushstroke</h2>
+          <p class="section-subtitle">
+            We believe grooming should be a soothing wellness ritual rather than an ordeal. Our three golden rules guide every single driveway appointment.
+          </p>
+        </div>
+
+        <div class="card-grid-3">
+          
+          <!-- Pillar 1 -->
+          <article class="pet-card">
+            <div class="pet-card-media">
+              <img src="assets/images/cat-catgroom.jpg" alt="Calm cat resting peacefully" width="400" height="260" loading="lazy">
+              <span class="pet-card-tag">Principle 1</span>
+            </div>
+            <div class="pet-card-body">
+              <h3 class="pet-card-title">100% Cage-Free Peace</h3>
+              <p class="pet-card-text">
+                Your pet is never put into a cage, cage dryer, or left alone. From the moment they step into our van until we hand them back to your arms, they have our groomer’s full, undivided attention.
+              </p>
+              <div class="pet-card-perks">
+                <span class="pet-perk-item">✓ Zero multi-pet mixing</span>
+                <span class="pet-perk-item">✓ Zero loud cage bank barking</span>
+                <span class="pet-perk-item">✓ Warm, personal companionship</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Pillar 2 -->
+          <article class="pet-card">
+            <div class="pet-card-media">
+              <img src="assets/images/user/user_img13_senior_relax.jpg" alt="Dog being praised with gentle touch" width="400" height="260" loading="lazy">
+              <span class="pet-card-tag" style="background-color: var(--brand-terracotta);">Principle 2</span>
+            </div>
+            <div class="pet-card-body">
+              <h3 class="pet-card-title">Fear-Free Positive Reinforcement</h3>
+              <p class="pet-card-text">
+                We never use forceful restraint or rush. We use praise, organic treats, slow desensitization to clippers and dryers, and soothing vocal encouragement to build enduring trust.
+              </p>
+              <div class="pet-card-perks">
+                <span class="pet-perk-item">✓ Organic high-value praise treats</span>
+                <span class="pet-perk-item">✓ Whisper low-airspeed acclimatization</span>
+                <span class="pet-perk-item">✓ Gentle paws-first touch protocol</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Pillar 3 -->
+          <article class="pet-card">
+            <div class="pet-card-media">
+              <img src="assets/images/user/user_img1_terrier.png" alt="Relaxed dog smiling calmly" width="400" height="260" loading="lazy">
+              <span class="pet-card-tag" style="background-color: #3B7A57;">Principle 3</span>
+            </div>
+            <div class="pet-card-body">
+              <h3 class="pet-card-title">Pacing for Senior &amp; Anxious Pets</h3>
+              <p class="pet-card-text">
+                Senior pets with arthritis and rescue animals with past trauma need extra time. We provide orthopedic foam cushions, low hydraulic tables, and frequent rest pauses.
+              </p>
+              <div class="pet-card-perks">
+                <span class="pet-perk-item">✓ Orthopedic anti-fatigue matting</span>
+                <span class="pet-perk-item">✓ Unhurried hydration &amp; rest breaks</span>
+                <span class="pet-perk-item">✓ Tailored low-temperature water soak</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 4 — GROOMING VAN, EQUIPMENT & HYGIENE PRACTICES
+         ========================================================================== -->
+    <section class="section" id="van-equipment">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="pill-badge">HOSPITAL-GRADE STANDARDS</span>
+          <h2 class="section-title">Inside Our Mercedes Mobile Spa</h2>
+          <p class="section-subtitle">
+            Step inside our state-of-the-art mobile grooming studio. Engineered for clinical cleanliness, whisper-quiet operation, and total comfort.
+          </p>
+        </div>
+
+        <div class="services-grid-4">
+          
+          <div class="process-pillar-card">
+            <div class="process-icon-box">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <h3 class="process-pillar-title">80-Gal Purified Water</h3>
+            <p class="process-pillar-desc">
+              Dedicated onboard multi-stage water filtration with continuous on-demand heating. Your pet is always washed in fresh, warm, clean water—never recycled.
+            </p>
+          </div>
+
+          <div class="process-pillar-card">
+            <div class="process-icon-box">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3 class="process-pillar-title">UV-C Sterilization</h3>
+            <p class="process-pillar-desc">
+              Between every visit, the stainless tub, table, combs, and clipper blades are disinfected with hospital-grade Virkon antiviral spray and UV-C germicidal light.
+            </p>
+          </div>
+
+          <div class="process-pillar-card">
+            <div class="process-icon-box">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3 class="process-pillar-title">Silent Lithium Power</h3>
+            <p class="process-pillar-desc">
+              High-capacity lithium battery bank powers all hydro-pumps and dryers. Zero loud external generators, zero noxious fumes, and zero startle noise.
+            </p>
+          </div>
+
+          <div class="process-pillar-card">
+            <div class="process-icon-box">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                <line x1="1" y1="10" x2="23" y2="10"></line>
+              </svg>
+            </div>
+            <h3 class="process-pillar-title">Hydraulic Ramps &amp; Climate</h3>
+            <p class="process-pillar-desc">
+              Dual climate-control HVAC maintains a pleasant 72°F year-round. Low-angle electric hydraulic tables allow large dogs to walk in safely without being lifted.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 5 — MEET THE GROOMER OR TEAM
+         Strictly Max 2 Cards on iPad / iPad Pro • Equal Height Cards
+         ========================================================================== -->
+    <section class="section section-alt" id="team">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="pill-badge terracotta">CERTIFIED SPECIALISTS</span>
+          <h2 class="section-title">Meet Our Dedicated Master Groomers</h2>
+          <p class="section-subtitle">
+            Our certified groomers combine master scissor artistry with gentle behavioral empathy to provide genuine comfort for your furry family members.
+          </p>
+        </div>
+
+        <div class="team-grid-3">
+          
+          <!-- Team 1 -->
+          <article class="team-card">
+            <div class="team-avatar-box">
+              <img src="assets/images/avatar_elena.jpg" alt="Elena Rostova, Master Groomer & Founder" width="120" height="120" loading="lazy">
+            </div>
+            <h3 class="team-name">Elena Rostova</h3>
+            <span class="team-role">Founder &amp; Master Stylist</span>
+            <p class="team-bio">
+              With over 12 years of professional styling experience, Elena founded Velvet Paws to bring low-stress luxury care directly to pets in their home surroundings.
+            </p>
+            <div class="team-tags">
+              <span class="team-tag">AKC Breed Certified</span>
+              <span class="team-tag">Fear-Free Elite</span>
+              <span class="team-tag">Pet CPR Certified</span>
+            </div>
+          </article>
+
+          <!-- Team 2 -->
+          <article class="team-card">
+            <div class="team-avatar-box">
+              <img src="assets/images/avatar_marcus.jpg" alt="Marcus Vance, Canine Breed & Scissor Lead" width="120" height="120" loading="lazy">
+            </div>
+            <h3 class="team-name">Marcus Vance</h3>
+            <span class="team-role">Canine Styling Lead</span>
+            <p class="team-bio">
+              Specializing in Doodles, Poodles, and Terrier hand scissoring, Marcus brings patience and an artistic eye to give every pet their best look.
+            </p>
+            <div class="team-tags">
+              <span class="team-tag">Doodle Styling</span>
+              <span class="team-tag">Hand Scissoring</span>
+              <span class="team-tag">Undercoat Expert</span>
+            </div>
+          </article>
+
+          <!-- Team 3 -->
+          <article class="team-card">
+            <div class="team-avatar-box">
+              <img src="assets/images/avatar_maya.jpg" alt="Maya Lin, Feline & Senior Pet Specialist" width="120" height="120" loading="lazy">
+            </div>
+            <h3 class="team-name">Maya Lin</h3>
+            <span class="team-role">Feline &amp; Senior Specialist</span>
+            <p class="team-bio">
+              Dedicated to our quiet cat appointments and gentle senior dog handling. Maya creates a soothing, peaceful environment for high-anxiety pets.
+            </p>
+            <div class="team-tags">
+              <span class="team-tag">Feline Master</span>
+              <span class="team-tag">Senior Arthritis Care</span>
+              <span class="team-tag">Aromatherapy Certified</span>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 6 — BOOKING CTA
+         ========================================================================== -->
+    <section class="section" id="booking-cta">
+      <div class="container">
+        
+        <div style="background: linear-gradient(135deg, var(--brand-forest), var(--brand-forest-dark)); color: #FFFFFF; border-radius: var(--radius-xl); padding: 4rem 2.5rem; text-align: center; box-shadow: 0 16px 40px rgba(36, 76, 58, 0.28);">
+          <span class="pill-badge terracotta" style="margin-bottom: 1.25rem;">RESERVE YOUR DRIVEWAY WINDOW</span>
+          <h2 style="font-size: clamp(2rem, 4vw, 3rem); color: #FFFFFF; font-weight: 800; margin-bottom: 1rem;">
+            Treat Your Pet to the Ultimate Doorstep Spa
+          </h2>
+          <p style="font-size: 1.1rem; color: var(--brand-sage); max-width: 680px; margin: 0 auto 2.5rem auto; line-height: 1.65;">
+            Say goodbye to car rides and stressful salon lobbies. Our fully self-contained Mercedes van pulls right into your driveway.
+          </p>
+
+          <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="services.html#booking-form" class="btn btn-primary btn-pill" style="padding: 1rem 2.25rem; font-size: 1.05rem;">
+              <span>Book a Van Grooming</span>
+              <span>&rarr;</span>
+            </a>
+            <a href="tel:+18005557297" class="btn btn-outline btn-pill btn-outline-white">
+              <span>📞 (800) 555-PAWS</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       SITE FOOTER (Rich Deep Forest Green with Bidirectional Support)
+       ========================================================================== -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container">
+            <div class="footer-top-grid">
+        
+        <!-- Col 1: Brand Info & Bio -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" aria-label="Velvet Paws">
+            <div class="brand-emblem-box">
+              <img src="assets/images/logo.svg" alt="Velvet Paws Emblem" width="38" height="38">
+            </div>
+            <div class="brand-text">
+              <span class="brand-name">Velvet<span>Paws</span></span>
+              <span class="brand-tagline">MOBILE LUXURY SPA</span>
+            </div>
+          </a>
+          <p>
+            Experience the gold standard in mobile pet pampering. Our state-of-the-art Mercedes Sprinter grooming vans arrive directly at your residence, fully self-contained with purified heated water, climate control, and gentle certified groomers.
+          </p>
+          <div class="footer-socials">
+            <a href="contact.html#social" class="footer-social-btn" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="contact.html#social" class="footer-social-btn" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="contact.html#social" class="footer-social-btn" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div>
+          <h5 class="footer-col-title">Navigation</h5>
+          <div class="footer-links-list">
+            <a href="index.html">Home 1 (Doorstep Van)</a>
+            <a href="home-2.html">Home 2 (VIP Luxury Spa)</a>
+            <a href="services.html">Spa &amp; Grooming Services</a>
+            <a href="pricing.html">Transparent Pricing</a>
+            <a href="about.html">About Our Van Fleet</a>
+            <a href="contact.html">Contact &amp; Coverage</a>
+            <a href="dashboard.html">Pet Owner Concierge</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Van Service Areas -->
+        <div>
+          <h5 class="footer-col-title">Van Service Areas</h5>
+          <div class="footer-links-list">
+            <a href="contact.html#areas">North Hills &amp; Heights</a>
+            <a href="contact.html#areas">Westside Suburbs</a>
+            <a href="contact.html#areas">Sunset Bay Estates</a>
+            <a href="contact.html#areas">Pinecrest Valley</a>
+            <a href="contact.html#areas">Riverdale &amp; Downtown</a>
+            <a href="contact.html#areas">Request New ZIP Code</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Helpful Contact Info -->
+        <div>
+          <h5 class="footer-col-title">Contact &amp; Driveway Hours</h5>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <div>
+              <strong style="display:block; color:#FFFFFF;">Direct Phone Hotline</strong>
+              <a href="tel:+18005557297">(800) 555-PAWS</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <div>
+              <strong style="display:block; color:#FFFFFF;">Email Concierge</strong>
+              <a href="mailto:hello@velvetpawsvan.com">hello@velvetpawsvan.com</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <div>
+              <strong style="display:block; color:#FFFFFF;">Operating Hours</strong>
+              <span>Mon – Sun: 7:30 AM – 7:00 PM</span>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <div>
+              <strong style="display:block; color:#FFFFFF;">Central Dispatch Hub</strong>
+              <span>100 Driveway Concierge Way, Suite 400</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Copyright & Direction Switcher -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Velvet Paws Mobile Pet Grooming Van Service. All rights reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Service</a>
+          <a href="#safety">Pet Safety Protocol</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

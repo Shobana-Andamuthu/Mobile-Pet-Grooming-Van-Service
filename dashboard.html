@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Pet Owner Dashboard | Velvet Paws Mobile Pet Grooming</title>
+  <meta name="description" content="Manage upcoming mobile pet grooming van visits, book new driveway slots, review past service records, and manage pet profiles.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Immediate Theme & Direction Script to Prevent FOUC -->
+  <script>
+    (function() {
+      try {
+        var savedTheme = localStorage.getItem('paw_grooming_theme') || 'light';
+        var savedDir = localStorage.getItem('paw_grooming_dir') || 'ltr';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.documentElement.setAttribute('dir', savedDir);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="dashboard-root">
+
+  <!-- Attractive Luxury Pet Van Page Preloader -->
+  <div id="page-preloader" class="page-preloader" aria-hidden="true">
+    <div class="preloader-content">
+      <div class="preloader-van-wrap">
+        <div class="preloader-pulse-ring"></div>
+        <div class="preloader-icon-box">
+          <svg class="preloader-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 18H3c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2h12v12H5z"></path>
+            <path d="M15 9h4.6a2 2 0 0 1 1.8 1.1L23 14v2c0 1.1-.9 2-2 2h-2"></path>
+            <circle cx="7" cy="18" r="2.5"></circle>
+            <circle cx="17" cy="18" r="2.5"></circle>
+            <circle class="preloader-bubble bubble-1" cx="12" cy="4" r="1.5" fill="currentColor"></circle>
+            <circle class="preloader-bubble bubble-2" cx="15" cy="2" r="1" fill="currentColor"></circle>
+          </svg>
+        </div>
+      </div>
+      <div class="preloader-brand">
+        <span class="preloader-title">Velvet<span>Van</span></span>
+        <span class="preloader-subtitle">Luxury Mobile Pet Spa</span>
+      </div>
+      <div class="preloader-progress-track">
+        <div class="preloader-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Backdrop for Dashboard -->
+  <div class="dashboard-drawer-backdrop" id="dashboard-drawer-backdrop" aria-hidden="true"></div>
+
+  <!-- ==========================================================================
+       SIDEBAR NAVIGATION (MATCHING REFERENCE IMAGE 1)
+       Fixed/Sticky on Desktop > 1024px • Slide-over Drawer on Tablets/Mobile (Ref 2)
+  <!-- ==========================================================================
+       TOPBAR HEADER (MATCHING REF 1 & 2) — 100% FULL WIDTH AT TOP
+       ========================================================================== -->
+  <header class="dashboard-topbar">
+    
+    <!-- Left side: Hamburger Toggle (Mobile) + Brand Logo Emblem -->
+    <div class="dashboard-topbar-left">
+      <button class="dashboard-mobile-toggle" id="open-dash-drawer" aria-label="Toggle Dashboard Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <a href="index.html" class="dashboard-brand-box" aria-label="Velvet Paws Home">
+        <img src="assets/images/logo.svg" alt="Velvet Paws Emblem" width="38" height="38">
+        <div class="dashboard-brand-text">
+          <span class="dashboard-brand-title">Velvet Paws</span>
+          <span class="dashboard-brand-sub">PET PORTAL</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Right side: Controls (RTL, Dark Mode, Profile, CTA) - Hidden on Mobile, available in Drawer -->
+    <div class="dashboard-topbar-actions">
+      <!-- RTL / LTR Toggle Button -->
+      <button class="dashboard-pill-action" id="rtl-toggle" data-action="toggle-rtl" title="Switch RTL/LTR" aria-label="Toggle Direction">
+        <span>RTL</span>
+      </button>
+
+      <!-- Light / Dark Toggle Button -->
+      <button class="dashboard-pill-action" id="theme-toggle" data-action="toggle-theme" title="Switch Theme" aria-label="Toggle Theme">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+
+      <!-- Profile Dropdown (Ref 1 & 2) -->
+      <div class="nav-item-dropdown" style="position: relative;">
+        <button class="dashboard-pill-action" id="profile-dropdown-btn" aria-haspopup="true" aria-expanded="false">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span class="hide-on-mobile">Profile</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="dropdown-menu" id="profile-dropdown-menu" style="min-width: 180px; right: 0; left: auto;">
+          <a href="#section-pets" class="dropdown-link">My Pets (3 Registered)</a>
+          <a href="#section-recurring" class="dropdown-link">Driveway Instructions</a>
+          <a href="login.html" class="dropdown-link" style="color: #D9534F;">Log Out</a>
+        </div>
+      </div>
+
+      <!-- Primary Action CTA Button (Matching '+ New Placement' in Ref 1) -->
+      <a href="#section-booking" class="dashboard-btn-new" id="topbar-new-booking-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+        <span>Book Van Visit</span>
+      </a>
+    </div>
+
+  </header>
+
+  <!-- ==========================================================================
+       DASHBOARD BODY LAYOUT: FULL-HEIGHT SIDEBAR + FLUID CONTENT
+       ========================================================================== -->
+  <div class="dashboard-layout-body">
+
+    <!-- Sidebar Navigation (Full Height Sticky on Desktop • Off-canvas on Mobile) -->
+    <aside class="dashboard-sidebar" id="dashboard-sidebar" aria-label="Pet Owner Dashboard Navigation">
+      
+      <!-- Mobile Drawer Top Close Header -->
+      <div class="dashboard-sidebar-header hide-on-desktop">
+        <span style="font-weight: 800; font-size: 0.95rem; color: var(--text-heading);">Navigation Menu</span>
+        <button class="nav-circle-btn" id="close-dash-drawer" aria-label="Close menu" style="width: 32px; height: 32px; background: rgba(0,0,0,0.06); color: var(--text-heading); border: none; font-size: 1.2rem; cursor: pointer;">
+          &times;
+        </button>
+      </div>
+
+      <!-- User Profile Card in Sidebar (Matching 'Acme Capital Partners' card in Ref 1) -->
+      <div class="sidebar-user-block">
+        <div class="sidebar-user-avatar" id="dash-user-initials" aria-hidden="true">SJ</div>
+        <div class="sidebar-user-info">
+          <span class="sidebar-user-name" id="dash-user-name">Sarah Jenkins</span>
+          <span class="sidebar-user-meta">Client ID #VP-8492</span>
+        </div>
+      </div>
+
+      <!-- Mobile Quick Actions Row inside Drawer -->
+      <div class="sidebar-mobile-actions">
+        <div class="sidebar-mobile-controls-row">
+          <button class="dashboard-pill-action" data-action="toggle-rtl" title="Switch RTL/LTR" aria-label="Toggle Direction">
+            <span>RTL</span>
+          </button>
+          <button class="dashboard-pill-action" data-action="toggle-theme" title="Switch Theme" aria-label="Toggle Theme">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <span>Theme</span>
+          </button>
+        </div>
+        <a href="#section-booking" class="dashboard-btn-new" style="width: 100%; justify-content: center;" onclick="document.getElementById('dashboard-sidebar').classList.remove('is-open'); document.getElementById('dashboard-drawer-backdrop').classList.remove('is-open');">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          <span>Book Van Visit</span>
+        </a>
+      </div>
+
+      <!-- Numbered Navigation Menu (Matching Ref 1 & 2) -->
+      <nav class="sidebar-nav">
+        <a href="#section-overview" class="sidebar-nav-btn is-active" data-target="section-overview" id="nav-btn-overview">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          <span>1. Overview</span>
+        </a>
+
+        <a href="#section-booking" class="sidebar-nav-btn" data-target="section-booking" id="nav-btn-booking">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="16"></line>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+          <span>2. Book a Grooming Slot</span>
+        </a>
+
+        <a href="#section-pets" class="sidebar-nav-btn" data-target="section-pets" id="nav-btn-pets">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M12 2a4 4 0 0 1 4 4v2h-8V6a4 4 0 0 1 4-4z"></path>
+            <path d="M4 14a8 8 0 0 1 16 0v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6z"></path>
+          </svg>
+          <span>3. My Pets</span>
+        </a>
+
+        <a href="#section-upcoming" class="sidebar-nav-btn" data-target="section-upcoming" id="nav-btn-upcoming">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span>4. Upcoming Appointments</span>
+        </a>
+
+        <a href="#section-history" class="sidebar-nav-btn" data-target="section-history" id="nav-btn-history">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+          </svg>
+          <span>5. Service History</span>
+        </a>
+
+        <a href="#section-recurring" class="sidebar-nav-btn" data-target="section-recurring" id="nav-btn-recurring">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <polyline points="23 4 23 10 17 10"></polyline>
+            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+          </svg>
+          <span>6. Recurring &amp; Actions</span>
+        </a>
+      </nav>
+
+      <!-- Sign Out Button at Bottom of Sidebar -->
+      <div class="sidebar-footer">
+        <a href="login.html" class="sidebar-signout-btn" id="sidebar-signout-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+          <span>Sign Out</span>
+        </a>
+      </div>
+
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="dashboard-main">
+      <div class="dashboard-content">
+
+        <!-- Simulated Client Environment Alert Banner (Harmonious Theme Styling) -->
+        <div class="dashboard-notice-box" role="note">
+          <svg class="dashboard-notice-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          <div>
+            <strong>Simulated Pet Owner Environment:</strong> This dashboard is populated with realistic demonstration records for interactive review. No actual appointments will be dispatched to real residential addresses.
+          </div>
+        </div>
+
+      <!-- ======================================================================
+           SECTION 1: OVERVIEW & KEY METRICS (MATCHING REFERENCE IMAGE 1 & 2)
+           ====================================================================== -->
+      <section id="section-overview" class="dashboard-tab-content">
+        
+        <!-- Section Header Row -->
+        <div class="dash-section-header">
+          <div class="dash-section-title-wrap">
+            <h2 class="dash-section-title">1. Pet Care Overview &amp; Key Metrics</h2>
+            <p class="dash-section-subtitle">
+              Real-time aggregate summary across your registered pets, next scheduled mobile grooming visit, and routine wellness cadence.
+            </p>
+          </div>
+          <div class="dash-snapshot-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="12" cy="12" r="10"></circle>
+            </svg>
+            <span>LIVE SNAPSHOT: OCT 2026</span>
+          </div>
+        </div>
+
+        <!-- 4 Metric Cards (Matching Image 1 & 2 Layout) -->
+        <div class="metrics-grid-4">
+          
+          <!-- Card 1: Next Visit -->
+          <article class="metric-card">
+            <div class="metric-card-header">
+              <span class="metric-card-label">Next Scheduled Visit</span>
+              <div class="metric-card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+            </div>
+            <div class="metric-card-value" style="font-size: 1.55rem;">Tomorrow</div>
+            <div class="metric-card-trend">
+              <span>▲</span>
+              <span>10:30 AM (Van #02 en route)</span>
+            </div>
+          </article>
+
+          <!-- Card 2: Active Pets Registered -->
+          <article class="metric-card">
+            <div class="metric-card-header">
+              <span class="metric-card-label">Active Pets Registered</span>
+              <div class="metric-card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2a4 4 0 0 1 4 4v2h-8V6a4 4 0 0 1 4-4z"></path>
+                  <path d="M4 14a8 8 0 0 1 16 0v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="metric-card-value" id="metric-pet-count">3 Pets</div>
+            <div class="metric-card-trend">
+              <span>▲</span>
+              <span>2 Dogs • 1 Cat on file</span>
+            </div>
+          </article>
+
+          <!-- Card 3: Completed Spa Sessions -->
+          <article class="metric-card">
+            <div class="metric-card-header">
+              <span class="metric-card-label">Completed Spa Visits</span>
+              <div class="metric-card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div class="metric-card-value">14 Visits</div>
+            <div class="metric-card-trend">
+              <span>▲</span>
+              <span>100% Gentle handling score</span>
+            </div>
+          </article>
+
+          <!-- Card 4: Routine Cadence Due -->
+          <article class="metric-card">
+            <div class="metric-card-header">
+              <span class="metric-card-label">Routine Bath Cadence</span>
+              <div class="metric-card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div class="metric-card-value">4 Weeks</div>
+            <div class="metric-card-trend">
+              <span>Auto-dispatch active</span>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Recent Operations Table (Matching Image 1 Operations Table) -->
+        <div class="dash-panel">
+          <h3 class="dash-panel-title">Recent Van Visits &amp; Upcoming Operations</h3>
+          <p class="dash-panel-desc">
+            Audit trail of driveway appointments, assigned mobile vans, validated bath treatments, and completed service logs.
+          </p>
+
+          <div class="table-responsive">
+            <table class="dash-table" id="overview-appointments-table">
+              <thead>
+                <tr>
+                  <th>TIMESTAMP</th>
+                  <th>APPT REF</th>
+                  <th>PET HOLDER</th>
+                  <th>GROOMING SERVICE</th>
+                  <th>STATUS</th>
+                  <th>ACTIONS</th>
+                </tr>
+              </thead>
+              <tbody id="overview-table-body">
+                <tr>
+                  <td>Tomorrow, 10:30 AM</td>
+                  <td><strong>#VP-84920</strong></td>
+                  <td>Oliver (Golden Retriever)</td>
+                  <td>Full Groom &amp; Scissor Styling</td>
+                  <td><span class="status-badge status-pending">Van Dispatched</span></td>
+                  <td>
+                    <button class="btn btn-outline btn-pill" style="padding: 0.35rem 0.8rem; font-size: 0.78rem;" onclick="viewApptDetails('#VP-84920')">Track Van</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Oct 12, 02:00 PM</td>
+                  <td><strong>#VP-84918</strong></td>
+                  <td>Bella (French Bulldog)</td>
+                  <td>Basic Hydrobath &amp; Nail Buff</td>
+                  <td><span class="status-badge status-disbursed">Completed</span></td>
+                  <td>
+                    <button class="btn btn-outline btn-pill" style="padding: 0.35rem 0.8rem; font-size: 0.78rem;" onclick="downloadDemoReceipt('#VP-84918')">Receipt</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Oct 04, 11:00 AM</td>
+                  <td><strong>#VP-84915</strong></td>
+                  <td>Luna (Ragdoll Cat)</td>
+                  <td>Feline Serenity Spa &amp; Lion Cut</td>
+                  <td><span class="status-badge status-disbursed">Completed</span></td>
+                  <td>
+                    <button class="btn btn-outline btn-pill" style="padding: 0.35rem 0.8rem; font-size: 0.78rem;" onclick="downloadDemoReceipt('#VP-84915')">Receipt</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Nov 08, 09:00 AM</td>
+                  <td><strong>#VP-84930</strong></td>
+                  <td>Oliver (Golden Retriever)</td>
+                  <td>De-Shedding Deep Undercoat Bath</td>
+                  <td><span class="status-badge status-active">Plan Active</span></td>
+                  <td>
+                    <button class="btn btn-outline btn-pill" style="padding: 0.35rem 0.8rem; font-size: 0.78rem;" onclick="cancelDemoAppt('#VP-84930')">Manage</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ======================================================================
+           SECTION 2: BOOK A GROOMING SLOT (INTERACTIVE FORM WITH VALIDATION)
+           ====================================================================== -->
+      <section id="section-booking" class="dashboard-tab-content" style="display: none;">
+        
+        <div class="dash-section-header">
+          <div class="dash-section-title-wrap">
+            <h2 class="dash-section-title">2. Book a Grooming Slot</h2>
+            <p class="dash-section-subtitle">
+              Select your pet, choose a tailored service package, and reserve an available driveway arrival slot.
+            </p>
+          </div>
+        </div>
+
+        <div class="dash-panel" style="max-width: 820px;">
+          
+          <!-- Booking Demo Success Banner -->
+          <div class="form-success-banner" id="dash-booking-success" role="status">
+            <h4 style="color: #FFFFFF; font-size: 1.25rem; font-weight: 800; margin-bottom: 0.4rem;">
+              ✓ Appointment Reserved in Demo System!
+            </h4>
+            <p style="color: var(--brand-sage); margin: 0; font-size: 0.9rem;">
+              Your new booking has been added to <strong>Upcoming Appointments</strong> below and synced with your Overview schedule.
+            </p>
+          </div>
+
+          <form id="dash-booking-form" novalidate>
+            
+            <!-- Pet Selection -->
+            <div class="auth-form-group" id="grp-book-pet">
+              <label for="book-pet-select" class="auth-form-label">Select Pet *</label>
+              <select id="book-pet-select" class="auth-input" required>
+                <option value="">Choose one of your registered pets...</option>
+                <option value="Oliver (Golden Retriever)">Oliver (Golden Retriever • 68 lbs)</option>
+                <option value="Bella (French Bulldog)">Bella (French Bulldog • 24 lbs)</option>
+                <option value="Luna (Ragdoll Cat)">Luna (Ragdoll Cat • 12 lbs)</option>
+              </select>
+              <span class="auth-field-error-msg" id="err-book-pet">Please select a pet for this booking.</span>
+            </div>
+
+            <!-- Service Package Selection -->
+            <div class="auth-form-group" id="grp-book-service">
+              <label for="book-service-select" class="auth-form-label">Service Package *</label>
+              <select id="book-service-select" class="auth-input" required>
+                <option value="">Select Grooming Package...</option>
+                <option value="Basic Hydrobath & Brush">Basic Hydrobath &amp; Warm Blow Dry ($75 - $95)</option>
+                <option value="Full Groom & Scissor Styling">Full Groom &amp; Breed Scissor Styling ($110 - $145)</option>
+                <option value="De-Shedding Deep Undercoat Bath">De-Shedding Deep Undercoat Bath ($95 - $125)</option>
+                <option value="Feline Serenity Spa & Lion Cut">Feline Serenity Spa &amp; Lion Cut ($105 - $130)</option>
+              </select>
+              <span class="auth-field-error-msg" id="err-book-service">Please select a service package.</span>
+            </div>
+
+            <!-- Preferred Date Picker -->
+            <div class="auth-form-group" id="grp-book-date">
+              <label for="book-date-input" class="auth-form-label">Preferred Date *</label>
+              <input type="date" id="book-date-input" class="auth-input" required>
+              <span class="auth-field-error-msg" id="err-book-date">Please pick a valid future date.</span>
+            </div>
+
+            <!-- Interactive Available Time Slots (Chips) -->
+            <div class="auth-form-group" id="grp-book-time">
+              <label class="auth-form-label">Available Driveway Arrival Window *</label>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+                Click an available arrival window below (based on van route optimization in your zone):
+              </p>
+              <div class="time-slots-grid" id="time-slots-container">
+                <button type="button" class="slot-chip is-selected" data-time="09:00 AM - 10:30 AM">09:00 AM - 10:30 AM</button>
+                <button type="button" class="slot-chip" data-time="11:30 AM - 01:00 PM">11:30 AM - 01:00 PM</button>
+                <button type="button" class="slot-chip" data-time="02:00 PM - 03:30 PM">02:00 PM - 03:30 PM</button>
+                <button type="button" class="slot-chip" data-time="04:30 PM - 06:00 PM">04:30 PM - 06:00 PM</button>
+              </div>
+              <input type="hidden" id="selected-time-slot" value="09:00 AM - 10:30 AM">
+            </div>
+
+            <!-- Driveway & Special Notes -->
+            <div class="auth-form-group">
+              <label for="book-notes" class="auth-form-label">Driveway Parking / Special Pet Notes</label>
+              <textarea id="book-notes" class="auth-input" style="height: 80px; padding: 0.75rem 1rem;" placeholder="e.g. Park on right side of driveway. Oliver gets nervous with ear dryers."></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="auth-submit-btn" style="max-width: 320px;">
+              <span>Reserve Driveway Slot</span>
+              <span aria-hidden="true">&rarr;</span>
+            </button>
+
+          </form>
+        </div>
+
+      </section>
+
+      <!-- ======================================================================
+           SECTION 3: MY PETS (PET PROFILES, BREED, CARE NOTES)
+           ====================================================================== -->
+      <section id="section-pets" class="dashboard-tab-content" style="display: none;">
+        
+        <div class="dash-section-header">
+          <div class="dash-section-title-wrap">
+            <h2 class="dash-section-title">3. Registered Pet Profiles</h2>
+            <p class="dash-section-subtitle">
+              Manage breed profiles, weight logs, coat sensitivities, and gentle handling instructions.
+            </p>
+          </div>
+          <button class="btn btn-primary btn-pill" id="btn-add-pet-modal" style="font-size: 0.85rem; padding: 0.55rem 1.15rem;">
+            <span>+ Add Another Pet</span>
+          </button>
+        </div>
+
+        <div class="pets-grid-3" id="pets-cards-container">
+          
+          <!-- Pet 1: Oliver -->
+          <article class="pet-profile-card">
+            <div class="pet-card-head">
+              <img src="assets/images/user/user_img2_retriever.jpg" alt="Oliver - Golden Retriever" class="pet-card-avatar">
+              <div>
+                <h3 class="pet-card-name">Oliver</h3>
+                <span class="pet-card-breed">Golden Retriever • Male</span>
+              </div>
+            </div>
+            <div class="pet-detail-row">
+              <span class="pet-detail-label">Weight</span>
+              <span class="pet-detail-value">68 lbs (Large)</span>
+            </div>
+            <div class="pet-detail-row">
+              <span class="pet-detail-label">Coat Type</span>
+              <span class="pet-detail-value">Heavy Double Coat</span>
+            </div>
+            <div class="pet-detail-row">
+              <span class="pet-detail-label">Last Groomed</span>
+              <span class="pet-detail-value">Sep 15, 2026</span>
+            </div>
+            <div class="pet-card-notes">
+              <strong>Groomer Care Notes:</strong> Sensitive ears; use organic hypoallergenic oatmeal shampoo. Loves peanut butter distraction lick mat.
+            </div>
+            <div style="margin-top: 1.25rem; display: flex; gap: 0.5rem;">
+              <button class="btn btn-outline btn-pill" style="flex: 1; font-size: 0.8rem; padding: 0.45rem;" onclick="quickBookPet('Oliver (Golden Retriever)')">Book Visit</button>
+            </div>
+          </article>
+
+          <!-- Pet 2: Bella -->
+          <article class="pet-profile-card">
+            <div class="pet-card-head">
+              <img src="assets/images/user/user_img6_puppy_shampoo.jpg" alt="Bella - French Bulldog" class="pet-card-avatar">
+              <div>
+                <h3 class="pet-card-name">Bella</h3>
+                <span class="pet-card-breed">French Bulldog • Female</span>
+              </div>
+            </div>
+            <div class="pet-detail-row">
+              <span class="pet-detail-label">Weight</span>
+              <span class="pet-detail-value">24 lbs (Medium)</span>
+            </div>
+            <div class="pet-detail-row">
+              <span class="pet-detail-label">Coat Type</span>
+              <span class="pet-detail-value">Short Smooth Single</span>
+            </div>
+            <div class="pet-detail-row">
+              <span class="pet-detail-label">Last Groomed</span>
+              <span class="pet-detail-value">Oct 12, 2026</span>
+            </div>
+            <div class="pet-card-notes">
+              <strong>Groomer Care Notes:</strong> Extra attention on facial fold cleaning with witch-hazel wipes and organic snout balm application.
+            </div>
+            <div style="margin-top: 1.25rem; display: flex; gap: 0.5rem;">
+              <button class="btn btn-outline btn-pill" style="flex: 1; font-size: 0.8rem; padding: 0.45rem;" onclick="quickBookPet('Bella (French Bulldog)')">Book Visit</button>
+            </div>
+          </article>
+
+          <!-- Pet 3: Luna -->
+          <article class="pet-profile-card">
+            <div class="pet-card-head">
+              <img src="assets/images/cat-catgroom.jpg" alt="Luna - Ragdoll Cat" class="pet-card-avatar">
+              <div>
+                <h3 class="pet-card-name">Luna</h3>
+                <span class="pet-card-breed">Ragdoll Cat • Female</span>
+              </div>
+            </div>
+            <div class="pet-detail-row">
+              <span class="pet-detail-label">Weight</span>
+              <span class="pet-detail-value">12 lbs (Feline)</span>
+            </div>
+            <div class="pet-detail-row">
+              <span class="pet-detail-label">Coat Type</span>
+              <span class="pet-detail-value">Long Silky Coat</span>
+            </div>
+            <div class="pet-detail-row">
+              <span class="pet-detail-label">Last Groomed</span>
+              <span class="pet-detail-value">Oct 04, 2026</span>
+            </div>
+            <div class="pet-card-notes">
+              <strong>Groomer Care Notes:</strong> 100% cage-free feline handling protocol. Whisper dryer on low heat only. Likes gentle chin scratches.
+            </div>
+            <div style="margin-top: 1.25rem; display: flex; gap: 0.5rem;">
+              <button class="btn btn-outline btn-pill" style="flex: 1; font-size: 0.8rem; padding: 0.45rem;" onclick="quickBookPet('Luna (Ragdoll Cat)')">Book Visit</button>
+            </div>
+          </article>
+
+        </div>
+
+      </section>
+
+      <!-- ======================================================================
+           SECTION 4: UPCOMING APPOINTMENTS (INTERACTIVE RESCHEDULE & CANCEL)
+           ====================================================================== -->
+      <section id="section-upcoming" class="dashboard-tab-content" style="display: none;">
+        
+        <div class="dash-section-header">
+          <div class="dash-section-title-wrap">
+            <h2 class="dash-section-title">4. Upcoming Appointments</h2>
+            <p class="dash-section-subtitle">
+              Confirmed driveway visits with assigned grooming specialists and live dispatch status.
+            </p>
+          </div>
+        </div>
+
+        <div class="dash-panel" id="upcoming-list-panel">
+          
+          <div id="upcoming-cards-wrapper" style="display: flex; flex-direction: column; gap: 1.25rem;">
+            
+            <!-- Upcoming Appt 1 -->
+            <div class="pet-profile-card" id="card-appt-84920" style="padding: 1.75rem;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                  <span class="status-badge status-pending" style="margin-bottom: 0.5rem;">Van Dispatched</span>
+                  <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--text-heading); margin: 0 0 0.25rem 0;">
+                    Tomorrow, 10:30 AM – 12:00 PM
+                  </h3>
+                  <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;">
+                    Assigned: <strong>Van #02 (Mercedes Sprinter)</strong> • Master Groomer <strong>Marcus Vance</strong>
+                  </p>
+                </div>
+                <div style="text-align: right;">
+                  <span style="font-size: 0.76rem; color: var(--text-muted); display: block;">Reference #</span>
+                  <strong style="color: var(--brand-forest); font-size: 1rem;">#VP-84920</strong>
+                </div>
+              </div>
+
+              <div style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                  <span style="font-size: 0.82rem; color: var(--text-muted);">Pet &amp; Treatment:</span>
+                  <div style="font-weight: 700; color: var(--text-heading); font-size: 0.95rem;">
+                    Oliver (Golden Retriever) — Full Groom &amp; Scissor Styling ($125)
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 0.5rem;">
+                  <button class="btn btn-outline btn-pill" style="font-size: 0.8rem; padding: 0.45rem 1rem;" onclick="rescheduleDemoAppt('#VP-84920')">Reschedule</button>
+                  <button class="btn btn-outline btn-pill" style="font-size: 0.8rem; padding: 0.45rem 1rem; color: #D9534F; border-color: rgba(217,83,79,0.3);" onclick="cancelDemoAppt('#VP-84920')">Cancel</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Upcoming Appt 2 -->
+            <div class="pet-profile-card" id="card-appt-84930" style="padding: 1.75rem;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                  <span class="status-badge status-active" style="margin-bottom: 0.5rem;">Plan Active</span>
+                  <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--text-heading); margin: 0 0 0.25rem 0;">
+                    Nov 08, 2026, 09:00 AM – 10:30 AM
+                  </h3>
+                  <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;">
+                    Assigned: <strong>Van #01 (Mercedes Sprinter)</strong> • Specialist <strong>Elena Rostova</strong>
+                  </p>
+                </div>
+                <div style="text-align: right;">
+                  <span style="font-size: 0.76rem; color: var(--text-muted); display: block;">Reference #</span>
+                  <strong style="color: var(--brand-forest); font-size: 1rem;">#VP-84930</strong>
+                </div>
+              </div>
+
+              <div style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                  <span style="font-size: 0.82rem; color: var(--text-muted);">Pet &amp; Treatment:</span>
+                  <div style="font-weight: 700; color: var(--text-heading); font-size: 0.95rem;">
+                    Oliver (Golden Retriever) — De-Shedding Deep Undercoat Bath ($105)
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 0.5rem;">
+                  <button class="btn btn-outline btn-pill" style="font-size: 0.8rem; padding: 0.45rem 1rem;" onclick="rescheduleDemoAppt('#VP-84930')">Reschedule</button>
+                  <button class="btn btn-outline btn-pill" style="font-size: 0.8rem; padding: 0.45rem 1rem; color: #D9534F; border-color: rgba(217,83,79,0.3);" onclick="cancelDemoAppt('#VP-84930')">Cancel</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ======================================================================
+           SECTION 5: SERVICE HISTORY (COMPLETED VISITS & INVOICES)
+           ====================================================================== -->
+      <section id="section-history" class="dashboard-tab-content" style="display: none;">
+        
+        <div class="dash-section-header">
+          <div class="dash-section-title-wrap">
+            <h2 class="dash-section-title">5. Service History &amp; Records</h2>
+            <p class="dash-section-subtitle">
+              Audit trail of previous doorstep visits, coat health inspections, and downloadable receipts.
+            </p>
+          </div>
+        </div>
+
+        <div class="dash-panel">
+          <div class="table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>DATE</th>
+                  <th>PET NAME</th>
+                  <th>SERVICE PERFORMED</th>
+                  <th>GROOMER REMARKS</th>
+                  <th>TOTAL</th>
+                  <th>RECEIPT</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Oct 12, 2026</strong></td>
+                  <td>Bella (Frenchie)</td>
+                  <td>Basic Hydrobath &amp; Nail Polish</td>
+                  <td>Clean ears, coat glossy, tolerated dryer very well.</td>
+                  <td>$85.00</td>
+                  <td><button class="btn btn-outline btn-pill" style="padding: 0.35rem 0.8rem; font-size: 0.78rem;" onclick="downloadDemoReceipt('#VP-84918')">PDF Receipt</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Oct 04, 2026</strong></td>
+                  <td>Luna (Ragdoll)</td>
+                  <td>Feline Serenity Spa &amp; Lion Cut</td>
+                  <td>Sanitary trim complete, zero stress signs observed.</td>
+                  <td>$115.00</td>
+                  <td><button class="btn btn-outline btn-pill" style="padding: 0.35rem 0.8rem; font-size: 0.78rem;" onclick="downloadDemoReceipt('#VP-84915')">PDF Receipt</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Sep 15, 2026</strong></td>
+                  <td>Oliver (Golden)</td>
+                  <td>Full Groom &amp; Scissor Styling</td>
+                  <td>Heavy undercoat de-shedded, feathering trimmed neatly.</td>
+                  <td>$125.00</td>
+                  <td><button class="btn btn-outline btn-pill" style="padding: 0.35rem 0.8rem; font-size: 0.78rem;" onclick="downloadDemoReceipt('#VP-83210')">PDF Receipt</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Aug 18, 2026</strong></td>
+                  <td>Bella (Frenchie)</td>
+                  <td>Gentle Hydrobath &amp; Paw Soak</td>
+                  <td>Paws moisturized with organic balm, nails clipped.</td>
+                  <td>$80.00</td>
+                  <td><button class="btn btn-outline btn-pill" style="padding: 0.35rem 0.8rem; font-size: 0.78rem;" onclick="downloadDemoReceipt('#VP-82190')">PDF Receipt</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ======================================================================
+           SECTION 6: RECURRING APPOINTMENTS & QUICK ACTIONS
+           ====================================================================== -->
+      <section id="section-recurring" class="dashboard-tab-content" style="display: none;">
+        
+        <div class="dash-section-header">
+          <div class="dash-section-title-wrap">
+            <h2 class="dash-section-title">6. Recurring Cadence &amp; Quick Actions</h2>
+            <p class="dash-section-subtitle">
+              Configure repeat doorstep grooming schedules and manage essential driveway access details.
+            </p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2rem;" class="grid-phone-stack">
+          
+          <!-- Left: Recurring Scheduling Cadence Box -->
+          <div class="dash-panel">
+            <h3 class="dash-panel-title">Automated Grooming Cadence</h3>
+            <p class="dash-panel-desc">
+              Keep your pets clean year-round without manual scheduling. Our dispatcher reserves your favorite day &amp; time.
+            </p>
+
+            <!-- Toggle Switch -->
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 1.25rem; background-color: var(--brand-sage-light); border-radius: var(--radius-lg); margin-bottom: 1.5rem;">
+              <div>
+                <strong style="color: var(--brand-forest); display: block; font-size: 0.98rem;">Doorstep Auto-Dispatch</strong>
+                <span style="font-size: 0.8rem; color: var(--brand-charcoal);" id="recurring-status-text">Active — Next cycle Nov 08</span>
+              </div>
+              <label style="position: relative; display: inline-block; width: 50px; height: 26px; cursor: pointer;">
+                <input type="checkbox" id="auto-dispatch-toggle" checked style="opacity: 0; width: 0; height: 0;">
+                <span style="position: absolute; inset: 0; background-color: var(--brand-forest); border-radius: 34px; transition: 0.3s;" id="toggle-slider">
+                  <span style="position: absolute; content: ''; height: 20px; width: 20px; left: 3px; bottom: 3px; background-color: white; border-radius: 50%; transition: 0.3s; transform: translateX(24px);" id="toggle-knob"></span>
+                </span>
+              </label>
+            </div>
+
+            <!-- Cadence Selector Options -->
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+              <label class="auth-remember-label" style="padding: 0.85rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); background: var(--bg-surface);">
+                <input type="radio" name="cadence-tier" value="2weeks">
+                <div style="margin-left: 0.5rem;">
+                  <strong>Every 2 Weeks (High Maintenance)</strong>
+                  <div style="font-size: 0.78rem; color: var(--text-muted);">Recommended for heavy shedders and active outdoor dogs.</div>
+                </div>
+              </label>
+
+              <label class="auth-remember-label" style="padding: 0.85rem; border: 1.5px solid var(--brand-forest); border-radius: var(--radius-md); background: var(--brand-sage-light);">
+                <input type="radio" name="cadence-tier" value="4weeks" checked>
+                <div style="margin-left: 0.5rem;">
+                  <strong style="color: var(--brand-forest);">Every 4 Weeks (Standard Healthy Routine) ★ Recommended</strong>
+                  <div style="font-size: 0.78rem; color: var(--brand-charcoal);">Ideal cadence for nail maintenance, ear hygiene, and coat softness.</div>
+                </div>
+              </label>
+
+              <label class="auth-remember-label" style="padding: 0.85rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); background: var(--bg-surface);">
+                <input type="radio" name="cadence-tier" value="6weeks">
+                <div style="margin-left: 0.5rem;">
+                  <strong>Every 6 Weeks (Longer Coats)</strong>
+                  <div style="font-size: 0.78rem; color: var(--text-muted);">Suitable for indoor cats and low-maintenance short-haired breeds.</div>
+                </div>
+              </label>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-pill" id="btn-save-cadence" style="font-size: 0.88rem;">
+              Update Cadence Settings
+            </button>
+          </div>
+
+          <!-- Right: Quick Actions & Concierge Support -->
+          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            
+            <!-- Quick Action 1: Driveway Gate Code -->
+            <div class="dash-panel" style="margin-bottom: 0;">
+              <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--text-heading); margin-bottom: 0.35rem;">
+                Driveway Access Instructions
+              </h4>
+              <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Help our van driver smoothly pull in without bothering you during phone meetings.
+              </p>
+              <div class="auth-form-group">
+                <label for="gate-code-input" class="auth-form-label">Gate Code / Parking Notes</label>
+                <input type="text" id="gate-code-input" class="auth-input" value="#7291 (Call box: Jenkins)">
+              </div>
+              <button type="button" class="btn btn-outline btn-pill" style="font-size: 0.8rem; padding: 0.45rem 1rem;" onclick="saveGateCode()">Save Access Notes</button>
+            </div>
+
+            <!-- Quick Action 2: Direct Van Concierge Contact -->
+            <div class="dash-panel" style="margin-bottom: 0;">
+              <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--text-heading); margin-bottom: 0.35rem;">
+                Direct Dispatch Support
+              </h4>
+              <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Need to adjust today’s arrival window or notify the groomer of an ear sensitivity?
+              </p>
+              <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                <a href="tel:+18005557297" class="btn btn-primary btn-pill" style="font-size: 0.82rem; text-decoration: none;">
+                  📞 (800) 555-PAWS
+                </a>
+                <a href="mailto:concierge@velvetpawsgrooming.com" class="btn btn-outline btn-pill" style="font-size: 0.82rem; text-decoration: none;">
+                  ✉️ Email Dispatch
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Interactive Dashboard Functionality Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 1. Mobile Drawer Navigation for Dashboard
+      const drawer = document.getElementById('dashboard-sidebar');
+      const backdrop = document.getElementById('dashboard-drawer-backdrop');
+      const openBtn = document.getElementById('open-dash-drawer');
+      const closeBtn = document.getElementById('close-dash-drawer');
+
+      function openDrawer() {
+        if (drawer) drawer.classList.add('is-open');
+        if (backdrop) backdrop.classList.add('is-open');
+        if (openBtn) openBtn.setAttribute('aria-expanded', 'true');
+      }
+
+      function closeDrawer() {
+        if (drawer) drawer.classList.remove('is-open');
+        if (backdrop) backdrop.classList.remove('is-open');
+        if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
+      }
+
+      if (openBtn) openBtn.addEventListener('click', openDrawer);
+      if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+      if (backdrop) backdrop.addEventListener('click', closeDrawer);
+
+      // 2. Profile Dropdown Toggle
+      const profileBtn = document.getElementById('profile-dropdown-btn');
+      const profileMenu = document.getElementById('profile-dropdown-menu');
+      if (profileBtn && profileMenu) {
+        profileBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          profileMenu.classList.toggle('show');
+        });
+        document.addEventListener('click', function() {
+          profileMenu.classList.remove('show');
+        });
+      }
+
+      // 3. Tab Navigation between the 6 Sections
+      const navButtons = document.querySelectorAll('.sidebar-nav-btn');
+      const tabSections = document.querySelectorAll('.dashboard-tab-content');
+
+      function switchTab(targetId) {
+        // Update sidebar button states
+        navButtons.forEach(function(btn) {
+          if (btn.getAttribute('data-target') === targetId) {
+            btn.classList.add('is-active');
+          } else {
+            btn.classList.remove('is-active');
+          }
+        });
+
+        // Show matching section, hide others
+        tabSections.forEach(function(sec) {
+          if (sec.id === targetId) {
+            sec.style.display = 'block';
+          } else {
+            sec.style.display = 'none';
+          }
+        });
+
+        // Close mobile drawer after selection
+        closeDrawer();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      navButtons.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = btn.getAttribute('data-target');
+          if (target) switchTab(target);
+        });
+      });
+
+      // Quick-action topbar button
+      const topbarNewBooking = document.getElementById('topbar-new-booking-btn');
+      if (topbarNewBooking) {
+        topbarNewBooking.addEventListener('click', function(e) {
+          e.preventDefault();
+          switchTab('section-booking');
+        });
+      }
+
+      // 4. Interactive Time Slot Selection in Booking Form
+      const slotChips = document.querySelectorAll('#time-slots-container .slot-chip');
+      const slotInput = document.getElementById('selected-time-slot');
+      slotChips.forEach(function(chip) {
+        chip.addEventListener('click', function() {
+          slotChips.forEach(c => c.classList.remove('is-selected'));
+          chip.classList.add('is-selected');
+          if (slotInput) slotInput.value = chip.getAttribute('data-time');
+        });
+      });
+
+      // 5. Booking Form Submission & Dynamic Schedule Sync
+      const bookingForm = document.getElementById('dash-booking-form');
+      const bookingSuccess = document.getElementById('dash-booking-success');
+
+      if (bookingForm) {
+        // Set min date to tomorrow
+        const dateInput = document.getElementById('book-date-input');
+        if (dateInput) {
+          const tmrw = new Date();
+          tmrw.setDate(tmrw.getDate() + 1);
+          dateInput.min = tmrw.toISOString().split('T')[0];
+        }
+
+        bookingForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          let hasError = false;
+
+          const petSel = document.getElementById('book-pet-select');
+          const grpPet = document.getElementById('grp-book-pet');
+          if (!petSel.value) {
+            grpPet.classList.add('has-error');
+            hasError = true;
+          } else {
+            grpPet.classList.remove('has-error');
+          }
+
+          const srvSel = document.getElementById('book-service-select');
+          const grpSrv = document.getElementById('grp-book-service');
+          if (!srvSel.value) {
+            grpSrv.classList.add('has-error');
+            hasError = true;
+          } else {
+            grpSrv.classList.remove('has-error');
+          }
+
+          const dateVal = document.getElementById('book-date-input');
+          const grpDate = document.getElementById('grp-book-date');
+          if (!dateVal.value) {
+            grpDate.classList.add('has-error');
+            hasError = true;
+          } else {
+            grpDate.classList.remove('has-error');
+          }
+
+          if (hasError) return;
+
+          const pet = petSel.value;
+          const srv = srvSel.value;
+          const date = dateVal.value;
+          const time = slotInput ? slotInput.value : '09:00 AM - 10:30 AM';
+          const newRef = '#VP-' + Math.floor(10000 + Math.random() * 90000);
+
+          // Add to Overview Table
+          const tbody = document.getElementById('overview-table-body');
+          if (tbody) {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+              <td>${date}, ${time.split(' - ')[0]}</td>
+              <td><strong>${newRef}</strong></td>
+              <td>${pet}</td>
+              <td>${srv}</td>
+              <td><span class="status-badge status-active">Confirmed</span></td>
+              <td><button class="btn btn-outline btn-pill" style="padding: 0.35rem 0.8rem; font-size: 0.78rem;" onclick="cancelDemoAppt('${newRef}')">Manage</button></td>
+            `;
+            tbody.insertBefore(tr, tbody.firstChild);
+          }
+
+          // Add to Upcoming Appointments Section
+          const upcomingWrapper = document.getElementById('upcoming-cards-wrapper');
+          if (upcomingWrapper) {
+            const card = document.createElement('div');
+            card.className = 'pet-profile-card';
+            card.id = 'card-appt-' + newRef.replace('#', '');
+            card.style.padding = '1.75rem';
+            card.innerHTML = `
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                  <span class="status-badge status-active" style="margin-bottom: 0.5rem;">Confirmed Slot</span>
+                  <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--text-heading); margin: 0 0 0.25rem 0;">
+                    ${date}, ${time}
+                  </h3>
+                  <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;">
+                    Assigned: <strong>Van #03 (Mercedes Sprinter)</strong> • Specialist <strong>Marcus Vance</strong>
+                  </p>
+                </div>
+                <div style="text-align: right;">
+                  <span style="font-size: 0.76rem; color: var(--text-muted); display: block;">Reference #</span>
+                  <strong style="color: var(--brand-forest); font-size: 1rem;">${newRef}</strong>
+                </div>
+              </div>
+              <div style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                  <span style="font-size: 0.82rem; color: var(--text-muted);">Pet &amp; Treatment:</span>
+                  <div style="font-weight: 700; color: var(--text-heading); font-size: 0.95rem;">
+                    ${pet} — ${srv}
+                  </div>
+                </div>
+                <div style="display: flex; gap: 0.5rem;">
+                  <button class="btn btn-outline btn-pill" style="font-size: 0.8rem; padding: 0.45rem 1rem;" onclick="rescheduleDemoAppt('${newRef}')">Reschedule</button>
+                  <button class="btn btn-outline btn-pill" style="font-size: 0.8rem; padding: 0.45rem 1rem; color: #D9534F; border-color: rgba(217,83,79,0.3);" onclick="cancelDemoAppt('${newRef}')">Cancel</button>
+                </div>
+              </div>
+            `;
+            upcomingWrapper.insertBefore(card, upcomingWrapper.firstChild);
+          }
+
+          // Show confirmation banner
+          if (bookingSuccess) {
+            bookingSuccess.classList.add('is-visible');
+            bookingSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+
+          bookingForm.reset();
+        });
+      }
+
+      // 6. Auto-Dispatch Toggle Interactive State
+      const autoToggle = document.getElementById('auto-dispatch-toggle');
+      const statusText = document.getElementById('recurring-status-text');
+      const knob = document.getElementById('toggle-knob');
+      const slider = document.getElementById('toggle-slider');
+
+      if (autoToggle) {
+        autoToggle.addEventListener('change', function() {
+          if (autoToggle.checked) {
+            if (statusText) statusText.textContent = 'Active — Next cycle Nov 08';
+            if (slider) slider.style.backgroundColor = 'var(--brand-forest)';
+            if (knob) knob.style.transform = 'translateX(24px)';
+          } else {
+            if (statusText) statusText.textContent = 'Paused — Auto-dispatch suspended';
+            if (slider) slider.style.backgroundColor = '#999999';
+            if (knob) knob.style.transform = 'translateX(0)';
+          }
+        });
+      }
+
+      const saveCadenceBtn = document.getElementById('btn-save-cadence');
+      if (saveCadenceBtn) {
+        saveCadenceBtn.addEventListener('click', function() {
+          alert('Demo Mode: Your repeat grooming cadence preference has been updated and saved to your profile.');
+        });
+      }
+
+      // Check sessionStorage for logged-in user custom name
+      try {
+        const customName = sessionStorage.getItem('velvet_user_name');
+        if (customName) {
+          const nameEl = document.getElementById('dash-user-name');
+          const initEl = document.getElementById('dash-user-initials');
+          if (nameEl) nameEl.textContent = customName;
+          if (initEl) {
+            const parts = customName.split(' ');
+            initEl.textContent = parts.map(p => p[0]).join('').substring(0, 2).toUpperCase();
+          }
+        }
+      } catch(e) {}
+    });
+
+    // Global Interactive Demo Functions
+    function quickBookPet(petName) {
+      const navBtnBooking = document.getElementById('nav-btn-booking');
+      if (navBtnBooking) navBtnBooking.click();
+      const petSelect = document.getElementById('book-pet-select');
+      if (petSelect) {
+        for (let i = 0; i < petSelect.options.length; i++) {
+          if (petSelect.options[i].value.includes(petName.split(' ')[0])) {
+            petSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    }
+
+    function cancelDemoAppt(refId) {
+      if (confirm(`Demo Mode: Cancel mobile grooming booking ${refId}?`)) {
+        const cleanId = 'card-appt-' + refId.replace('#', '');
+        const card = document.getElementById(cleanId);
+        if (card) {
+          card.innerHTML = `
+            <div style="padding: 1rem; color: #D9534F; font-weight: 700; background: rgba(217,83,79,0.08); border-radius: var(--radius-md);">
+              Appointment ${refId} has been successfully cancelled in this demo session.
+            </div>
+          `;
+          setTimeout(() => card.remove(), 2500);
+        } else {
+          alert(`Appointment ${refId} cancelled.`);
+        }
+      }
+    }
+
+    function rescheduleDemoAppt(refId) {
+      const newDate = prompt(`Demo Mode: Enter preferred reschedule date for ${refId} (YYYY-MM-DD):`, '2026-11-15');
+      if (newDate) {
+        alert(`Demo Mode: Appointment ${refId} arrival window has been rescheduled to ${newDate}.`);
+      }
+    }
+
+    function downloadDemoReceipt(refId) {
+      alert(`Demo Mode: Generating printable PDF invoice for appointment ${refId}... Receipt downloaded.`);
+    }
+
+    function viewApptDetails(refId) {
+      alert(`Demo Mode: Van #02 is on track. Driver ETA: Tomorrow at 10:28 AM. GPS tracking ping active.`);
+    }
+
+    function saveGateCode() {
+      const code = document.getElementById('gate-code-input').value;
+      alert(`Demo Mode: Driveway access instructions ("${code}") saved for all dispatched van drivers.`);
+    }
+  </script>
+</body>
+</html>

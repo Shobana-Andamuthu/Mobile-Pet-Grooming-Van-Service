@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" fill="none">
+  <defs>
+    <linearGradient id="vanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D98262"/>
+      <stop offset="100%" stop-color="#B85D3D"/>
+    </linearGradient>
+    <linearGradient id="pawGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DCE9DD"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer circle ring -->
+  <circle cx="27" cy="27" r="25" stroke="#244C3A" stroke-width="2" fill="#FFF9F0"/>
+  <circle cx="27" cy="27" r="23" stroke="#D98262" stroke-width="1" stroke-dasharray="2 3" fill="none"/>
+  
+  <!-- Modern Mobile Van Outline & Body -->
+  <path d="M12 33 L12 24 C12 21 14 19 17 19 L32 19 L38 25 L42 27 C43 27.5 43.5 28.5 43.5 29.5 L43.5 33 C43.5 34 42.5 35 41.5 35 L40 35 C40 33 38 31 36 31 C34 31 32 33 32 35 L22 35 C22 33 20 31 18 31 C16 31 14 33 14 35 L13 35 C12 35 12 34 12 33 Z" fill="url(#vanGrad)"/>
+  
+  <!-- Van Windshield & Side Window -->
+  <path d="M33 21 L37 25 L32 25 Z" fill="#FFF9F0" opacity="0.95"/>
+  <rect x="23" y="21" width="7" height="4" rx="1" fill="#FFF9F0" opacity="0.9"/>
+  <rect x="15" y="21" width="6" height="4" rx="1" fill="#FFF9F0" opacity="0.9"/>
+  
+  <!-- Wheels -->
+  <circle cx="18" cy="35" r="3.2" fill="#244C3A"/>
+  <circle cx="18" cy="35" r="1.3" fill="#FFF9F0"/>
+  <circle cx="36" cy="35" r="3.2" fill="#244C3A"/>
+  <circle cx="36" cy="35" r="1.3" fill="#FFF9F0"/>
+  
+  <!-- Paw Print Inside Body (Mobile Van Door) -->
+  <ellipse cx="27" cy="29" rx="2" ry="1.7" fill="#FFF9F0"/>
+  <circle cx="25" cy="26" r="0.8" fill="#FFF9F0"/>
+  <circle cx="26.8" cy="25.2" r="0.8" fill="#FFF9F0"/>
+  <circle cx="28.8" cy="26.3" r="0.8" fill="#FFF9F0"/>
+  
+  <!-- Spa Bubbles above van -->
+  <circle cx="34" cy="15" r="2" fill="#D98262" opacity="0.85"/>
+  <circle cx="39" cy="18" r="1.3" fill="#244C3A" opacity="0.7"/>
+  <circle cx="29" cy="14" r="1.1" fill="#D98262" opacity="0.6"/>
+  <!-- Sparkle star -->
+  <path d="M38 12 L38.6 13.4 L40 14 L38.6 14.6 L38 16 L37.4 14.6 L36 14 L37.4 13.4 Z" fill="#D98262"/>
+</svg>

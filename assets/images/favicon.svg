@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <circle cx="16" cy="16" r="15" fill="#244C3A"/>
+  <circle cx="16" cy="16" r="13" stroke="#D98262" stroke-width="1.2" fill="none"/>
+  <!-- Paw Print -->
+  <ellipse cx="16" cy="19" rx="4.5" ry="3.8" fill="#FFF9F0"/>
+  <circle cx="11.5" cy="13.5" r="1.8" fill="#FFF9F0"/>
+  <circle cx="15" cy="11.5" r="1.8" fill="#FFF9F0"/>
+  <circle cx="18.5" cy="12" r="1.8" fill="#FFF9F0"/>
+  <circle cx="21" cy="14.5" r="1.6" fill="#FFF9F0"/>
+  <circle cx="23" cy="8" r="1.5" fill="#D98262"/>
+</svg>
