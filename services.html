@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light" dir="ltr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Grooming Services &amp; Pricing | Velvet Paws Mobile Pet Grooming Van</title>
-  <meta name="description" content="Explore our full menu of mobile pet grooming services: warm hydrobath & brush, breed-specific scissor haircuts, nail dremel filing, and feline spa suites right in your driveway.">
-  
+  <meta name="description"
+    content="Explore our full menu of mobile pet grooming services: warm hydrobath & brush, breed-specific scissor haircuts, nail dremel filing, and feline spa suites right in your driveway.">
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 
   <!-- Immediate Theme & Direction Script to Prevent FOUC -->
   <script>
-    (function() {
+    (function () {
       try {
         var savedTheme = localStorage.getItem('paw_grooming_theme') || 'light';
         var savedDir = localStorage.getItem('paw_grooming_dir') || 'ltr';
         document.documentElement.setAttribute('data-theme', savedTheme);
         document.documentElement.setAttribute('dir', savedDir);
-      } catch (e) {}
+      } catch (e) { }
     })();
   </script>
 
   <!-- Google Fonts: Strictly 2 Font Families Max (Outfit + Plus Jakarta Sans) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
 
   <!-- Attractive Luxury Pet Van Page Preloader -->
@@ -37,7 +42,8 @@
       <div class="preloader-van-wrap">
         <div class="preloader-pulse-ring"></div>
         <div class="preloader-icon-box">
-          <svg class="preloader-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="preloader-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 18H3c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2h12v12H5z"></path>
             <path d="M15 9h4.6a2 2 0 0 1 1.8 1.1L23 14v2c0 1.1-.9 2-2 2h-2"></path>
             <circle cx="7" cy="18" r="2.5"></circle>
@@ -63,9 +69,10 @@
   <header class="site-header" id="site-header">
     <div class="container">
       <nav class="navbar" aria-label="Main Navigation">
-        
+
         <!-- Brand Logo -->
-        <a href="index.html" class="brand-logo" id="main-brand-logo" aria-label="Velvet Paws Mobile Pet Grooming Homepage">
+        <a href="index.html" class="brand-logo" id="main-brand-logo"
+          aria-label="Velvet Paws Mobile Pet Grooming Homepage">
           <div class="brand-emblem-box" aria-hidden="true">
             <img src="assets/images/logo.svg" alt="Velvet Paws Logo Emblem" width="40" height="40">
           </div>
@@ -80,7 +87,8 @@
           <li class="nav-item nav-item-dropdown">
             <a href="index.html" class="nav-link" id="nav-home-link" aria-haspopup="true" aria-expanded="false">
               Home
-              <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.5">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </a>
@@ -108,17 +116,21 @@
 
         <!-- Action Controls: RTL, Theme, Login, Book CTA & Hamburger -->
         <div class="nav-actions">
-          
+
           <!-- RTL / LTR Toggle Button -->
-          <button class="nav-circle-btn" id="rtl-toggle" data-action="toggle-rtl" title="Switch RTL/LTR" aria-label="Toggle Direction">
-            <svg class="icon-arrow-flip" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <button class="nav-circle-btn" id="rtl-toggle" data-action="toggle-rtl" title="Switch RTL/LTR"
+            aria-label="Toggle Direction">
+            <svg class="icon-arrow-flip" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M4 8h16M4 8l4-4M4 8l4 4M20 16H4m16 0l-4-4m4 4l-4 4"></path>
             </svg>
           </button>
 
           <!-- Light / Dark Theme Toggle Button -->
-          <button class="nav-circle-btn" id="theme-toggle" data-action="toggle-theme" title="Switch Theme" aria-label="Toggle Theme">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <button class="nav-circle-btn" id="theme-toggle" data-action="toggle-theme" title="Switch Theme"
+            aria-label="Toggle Theme">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
           </button>
@@ -138,7 +150,8 @@
           </a>
 
           <!-- Hamburger Button (Displayed on all screen sizes <= 1366px including iPad & iPad Pro) -->
-          <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle Navigation Menu" aria-expanded="false"
+            aria-controls="mobile-drawer">
             <span></span>
             <span></span>
             <span></span>
@@ -176,14 +189,17 @@
 
     <!-- Quick Mode Controls in Drawer -->
     <div class="drawer-quick-controls">
-      <button class="drawer-icon-btn" data-action="toggle-theme" id="drawer-theme-toggle" aria-label="Toggle Theme" title="Toggle Theme">
+      <button class="drawer-icon-btn" data-action="toggle-theme" id="drawer-theme-toggle" aria-label="Toggle Theme"
+        title="Toggle Theme">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
       </button>
 
-      <button class="drawer-icon-btn" data-action="toggle-rtl" id="drawer-rtl-toggle" aria-label="Toggle Direction" title="Toggle Direction">
-        <svg class="icon-arrow-flip" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <button class="drawer-icon-btn" data-action="toggle-rtl" id="drawer-rtl-toggle" aria-label="Toggle Direction"
+        title="Toggle Direction">
+        <svg class="icon-arrow-flip" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2">
           <path d="M4 8h16M4 8l4-4M4 8l4 4M20 16H4m16 0l-4-4m4 4l-4 4"></path>
         </svg>
       </button>
@@ -194,7 +210,9 @@
       <nav class="drawer-menu">
         <a href="index.html" class="drawer-link">
           <span>Home</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
         </a>
         <div class="drawer-subgroup">
           <a href="index.html" class="drawer-sublink">• Home 1 (Van At Doorstep)</a>
@@ -202,23 +220,33 @@
         </div>
         <a href="services.html" class="drawer-link active">
           <span>Services</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
         </a>
         <a href="pricing.html" class="drawer-link">
           <span>Pricing</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
         </a>
         <a href="about.html" class="drawer-link">
           <span>About</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
         </a>
         <a href="contact.html" class="drawer-link">
           <span>Contact</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
         </a>
         <a href="dashboard.html" class="drawer-link">
           <span>Dashboard</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
         </a>
       </nav>
     </div>
@@ -227,7 +255,10 @@
     <div class="drawer-footer">
       <div class="drawer-action-row">
         <a href="login.html" class="btn btn-outline btn-pill" style="padding: 0.65rem 1rem; font-size: 0.88rem;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
           Login
         </a>
         <a href="#booking-form" class="btn btn-primary btn-pill" style="padding: 0.65rem 1rem; font-size: 0.88rem;">
@@ -252,12 +283,13 @@
          Unique Grooming Photograph & Direct Booking Call To Action
          ========================================================================== -->
     <section class="page-hero-header" id="services-hero">
-      <img src="assets/images/user/user_img8_hydro_bath.jpg" alt="Pampered pet enjoying warm mobile spa hydrobath" class="page-hero-bg" width="1400" height="380" loading="eager">
+      <img src="assets/images/user/user_img8_hydro_bath.jpg" alt="Pampered pet enjoying warm mobile spa hydrobath"
+        class="page-hero-bg" width="1400" height="380" loading="eager">
       <div class="page-hero-overlay"></div>
 
       <div class="container">
         <div class="page-hero-content">
-          
+
           <div class="page-breadcrumbs">
             <a href="index.html">Home</a>
             <span>/</span>
@@ -269,7 +301,8 @@
           </h1>
 
           <p class="page-hero-desc">
-            Complete luxury spa care delivered right to your front door. Our custom Mercedes Sprinter van arrives fully equipped with purified warm water, climate control, and certified fear-free groomers.
+            Complete luxury spa care delivered right to your front door. Our custom Mercedes Sprinter van arrives fully
+            equipped with purified warm water, climate control, and certified fear-free groomers.
           </p>
 
           <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
@@ -292,21 +325,23 @@
          ========================================================================== -->
     <section class="section" id="bath-and-brush">
       <div class="container">
-        
+
         <div class="section-header">
           <span class="pill-badge">BATH &amp; BRUSH SUITES</span>
           <h2 class="section-title">Hydro-Massage &amp; Cleansing Baths</h2>
           <p class="section-subtitle">
-            Every bath includes warm purified water, botanical hypoallergenic shampoo, blueberry facial cleanse, ear flush, and cage-free hand blow dry.
+            Every bath includes warm purified water, botanical hypoallergenic shampoo, blueberry facial cleanse, ear
+            flush, and cage-free hand blow dry.
           </p>
         </div>
 
         <div class="services-grid-4">
-          
+
           <!-- Card 1: Essential Hydrobath -->
           <article class="service-item-card" id="service-hydrobath">
             <div class="service-card-media">
-              <img src="assets/images/services-bath-blowout.png" alt="Signature Hydrobath & Blowout puppy enjoying warm bath" width="400" height="275" loading="lazy">
+              <img src="assets/images/services-bath-blowout.png"
+                alt="Signature Hydrobath & Blowout puppy enjoying warm bath" width="400" height="275" loading="lazy">
               <span class="pet-card-tag">Most Popular</span>
             </div>
             <div class="service-card-body">
@@ -316,19 +351,26 @@
               </div>
               <h3 class="service-card-title">Signature Hydrobath &amp; Blowout</h3>
               <p class="service-card-desc">
-                Invigorating hydro-massage wash using organic aloe and oatmeal formula to soothe skin and lift dirt gently without stripping natural coat oils.
+                Invigorating hydro-massage wash using organic aloe and oatmeal formula to soothe skin and lift dirt
+                gently without stripping natural coat oils.
               </p>
               <div class="service-card-perks">
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Warm hydro-massage soak</span>
                 </div>
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Organic aloe &amp; oatmeal shampoo</span>
                 </div>
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Warm high-velocity hand blow dry</span>
                 </div>
               </div>
@@ -337,7 +379,8 @@
                   $75.00
                   <small>Weight-based scale</small>
                 </div>
-                <a href="#booking-form" class="btn btn-primary btn-sm btn-pill" data-select-service="Signature Hydrobath & Blowout">Book Bath</a>
+                <a href="#booking-form" class="btn btn-primary btn-sm btn-pill"
+                  data-select-service="Signature Hydrobath & Blowout">Book Bath</a>
               </div>
             </div>
           </article>
@@ -345,7 +388,8 @@
           <!-- Card 2: Deep De-Shedding -->
           <article class="service-item-card" id="service-deshed">
             <div class="service-card-media">
-              <img src="assets/images/services-undercoat-deshed.png" alt="Fluffy dog undercoat deshedding treatment with brush" width="400" height="275" loading="lazy">
+              <img src="assets/images/services-undercoat-deshed.png"
+                alt="Fluffy dog undercoat deshedding treatment with brush" width="400" height="275" loading="lazy">
               <span class="pet-card-tag" style="background-color: var(--brand-terracotta);">Undercoat Care</span>
             </div>
             <div class="service-card-body">
@@ -355,19 +399,26 @@
               </div>
               <h3 class="service-card-title">Deep Undercoat De-Shedding Bath</h3>
               <p class="service-card-desc">
-                Specialized dead hair release shampoo soak, rich botanical conditioning, and high-velocity blowout eliminating up to 90% of household shedding.
+                Specialized dead hair release shampoo soak, rich botanical conditioning, and high-velocity blowout
+                eliminating up to 90% of household shedding.
               </p>
               <div class="service-card-perks">
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Furminator undercoat release soak</span>
                 </div>
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Nutrient moisture mask</span>
                 </div>
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>30-min thorough brush &amp; rake</span>
                 </div>
               </div>
@@ -376,7 +427,8 @@
                   $95.00
                   <small>Double coat breeds</small>
                 </div>
-                <a href="#booking-form" class="btn btn-primary btn-sm btn-pill" data-select-service="Deep Undercoat De-Shedding Bath">Book Bath</a>
+                <a href="#booking-form" class="btn btn-primary btn-sm btn-pill"
+                  data-select-service="Deep Undercoat De-Shedding Bath">Book Bath</a>
               </div>
             </div>
           </article>
@@ -384,7 +436,9 @@
           <!-- Card 3: Hypoallergenic Relief -->
           <article class="service-item-card" id="service-hypoallergenic">
             <div class="service-card-media">
-              <img src="assets/images/services-hypoallergenic.jpg" alt="Relaxing dogs enjoying medicated sensitive hypoallergenic soak" width="400" height="275" loading="lazy">
+              <img src="assets/images/services-hypoallergenic.jpg"
+                alt="Relaxing dogs enjoying medicated sensitive hypoallergenic soak" width="400" height="275"
+                loading="lazy">
               <span class="pet-card-tag" style="background-color: #3B7A57;">Sensitive Skin</span>
             </div>
             <div class="service-card-body">
@@ -394,19 +448,26 @@
               </div>
               <h3 class="service-card-title">Hypoallergenic &amp; Relief Soak</h3>
               <p class="service-card-desc">
-                Fragrance-free colloidal oatmeal and pramoxine anti-itch therapy specifically blended for sensitive dogs prone to red skin and seasonal hot spots.
+                Fragrance-free colloidal oatmeal and pramoxine anti-itch therapy specifically blended for sensitive dogs
+                prone to red skin and seasonal hot spots.
               </p>
               <div class="service-card-perks">
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>100% dye &amp; fragrance-free formula</span>
                 </div>
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>10-min colloidal oatmeal soak</span>
                 </div>
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Paw pad soothing calendula balm</span>
                 </div>
               </div>
@@ -415,7 +476,8 @@
                   $85.00
                   <small>Therapeutic wash</small>
                 </div>
-                <a href="#booking-form" class="btn btn-primary btn-sm btn-pill" data-select-service="Hypoallergenic & Relief Soak">Book Bath</a>
+                <a href="#booking-form" class="btn btn-primary btn-sm btn-pill"
+                  data-select-service="Hypoallergenic & Relief Soak">Book Bath</a>
               </div>
             </div>
           </article>
@@ -423,7 +485,8 @@
           <!-- Card 4: Puppy & Kitten First Spa -->
           <article class="service-item-card" id="service-puppy">
             <div class="service-card-media">
-              <img src="assets/images/services-puppy-kitten.png" alt="Cute kitten and puppy getting gentle first spa grooming" width="400" height="275" loading="lazy">
+              <img src="assets/images/services-puppy-kitten.png"
+                alt="Cute kitten and puppy getting gentle first spa grooming" width="400" height="275" loading="lazy">
               <span class="pet-card-tag" style="background-color: var(--brand-terracotta);">Gentle Intro</span>
             </div>
             <div class="service-card-body">
@@ -433,19 +496,26 @@
               </div>
               <h3 class="service-card-title">Puppy &amp; Kitten First Spa Encounter</h3>
               <p class="service-card-desc">
-                A calm, positive introduction designed to build lifelong comfort with grooming. Features tearless baby wash, whisper blow drying, and treat breaks.
+                A calm, positive introduction designed to build lifelong comfort with grooming. Features tearless baby
+                wash, whisper blow drying, and treat breaks.
               </p>
               <div class="service-card-perks">
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Tearless gentle baby shampoo</span>
                 </div>
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Whisper-quiet low airspeed drying</span>
                 </div>
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Gentle nail tip smoothing &amp; praise</span>
                 </div>
               </div>
@@ -454,7 +524,8 @@
                   $60.00
                   <small>Young pets &lt; 6 mos</small>
                 </div>
-                <a href="#booking-form" class="btn btn-primary btn-sm btn-pill" data-select-service="Puppy & Kitten First Spa Encounter">Book Bath</a>
+                <a href="#booking-form" class="btn btn-primary btn-sm btn-pill"
+                  data-select-service="Puppy & Kitten First Spa Encounter">Book Bath</a>
               </div>
             </div>
           </article>
@@ -469,21 +540,23 @@
          ========================================================================== -->
     <section class="section section-alt" id="haircuts">
       <div class="container">
-        
+
         <div class="section-header">
           <span class="pill-badge terracotta">PRECISION HAIRCUTS &amp; STYLING</span>
           <h2 class="section-title">Breed-Specific &amp; Custom Hand Scissoring</h2>
           <p class="section-subtitle">
-            Crafted by certified master groomers inside our temperature-controlled van. Each haircut is styled to your pet’s exact breed anatomy and lifestyle.
+            Crafted by certified master groomers inside our temperature-controlled van. Each haircut is styled to your
+            pet’s exact breed anatomy and lifestyle.
           </p>
         </div>
 
         <div class="services-grid-4">
-          
+
           <!-- Card 1: AKC Breed Styling -->
           <article class="service-item-card" id="service-breed-standard">
             <div class="service-card-media">
-              <img src="assets/images/services-scissoring-poodle.jpg" alt="Signature Breed Standard Styling poodle hand-scissored" width="400" height="275" loading="lazy">
+              <img src="assets/images/services-scissoring-poodle.jpg"
+                alt="Signature Breed Standard Styling poodle hand-scissored" width="400" height="275" loading="lazy">
               <span class="pet-card-tag">Master Stylist</span>
             </div>
             <div class="service-card-body">
@@ -493,19 +566,26 @@
               </div>
               <h3 class="service-card-title">Signature Breed Standard Styling</h3>
               <p class="service-card-desc">
-                Precision hand-scissoring tailored to official breed specifications or your custom preferences, preserving coat health and aesthetic balance.
+                Precision hand-scissoring tailored to official breed specifications or your custom preferences,
+                preserving coat health and aesthetic balance.
               </p>
               <div class="service-card-perks">
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>AKC breed profile hand scissor cut</span>
                 </div>
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Sanitary trim &amp; paw pad shaving</span>
                 </div>
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Hand fluff-dry with silk spritz</span>
                 </div>
               </div>
@@ -514,7 +594,8 @@
                   $110.00
                   <small>Full haircut &amp; bath</small>
                 </div>
-                <a href="#booking-form" class="btn btn-primary btn-sm btn-pill" data-select-service="Signature Breed Standard Styling">Book Style</a>
+                <a href="#booking-form" class="btn btn-primary btn-sm btn-pill"
+                  data-select-service="Signature Breed Standard Styling">Book Style</a>
               </div>
             </div>
           </article>
@@ -522,7 +603,8 @@
           <!-- Card 2: Teddy Bear Cut -->
           <article class="service-item-card" id="service-teddy-bear">
             <div class="service-card-media">
-              <img src="assets/images/services-teddy-bear.jpg" alt="Fluffy puppy cut with rounded teddy bear face" width="400" height="275" loading="lazy">
+              <img src="assets/images/services-teddy-bear.jpg" alt="Fluffy puppy cut with rounded teddy bear face"
+                width="400" height="275" loading="lazy">
               <span class="pet-card-tag" style="background-color: var(--brand-terracotta);">Family Favorite</span>
             </div>
             <div class="service-card-body">
@@ -532,19 +614,26 @@
               </div>
               <h3 class="service-card-title">Full Teddy Bear &amp; Plush Puppy Cut</h3>
               <p class="service-card-desc">
-                Soft rounded head scissor sculpting, velvet muzzle trim, and plush body length that keeps your pet looking adorable and easy to brush at home.
+                Soft rounded head scissor sculpting, velvet muzzle trim, and plush body length that keeps your pet
+                looking adorable and easy to brush at home.
               </p>
               <div class="service-card-perks">
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Rounded teddy bear facial sculpting</span>
                 </div>
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Even, velvety 3/4-inch body clip</span>
                 </div>
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Tail plumage trim &amp; ear rounding</span>
                 </div>
               </div>
@@ -553,7 +642,8 @@
                   $95.00
                   <small>Includes full spa bath</small>
                 </div>
-                <a href="#booking-form" class="btn btn-primary btn-sm btn-pill" data-select-service="Full Teddy Bear & Plush Puppy Cut">Book Style</a>
+                <a href="#booking-form" class="btn btn-primary btn-sm btn-pill"
+                  data-select-service="Full Teddy Bear & Plush Puppy Cut">Book Style</a>
               </div>
             </div>
           </article>
@@ -561,7 +651,8 @@
           <!-- Card 3: Summer De-Bulk -->
           <article class="service-item-card" id="service-summer-cut">
             <div class="service-card-media">
-              <img src="assets/images/services-summer-trim.png" alt="Clean trimmed dog for active warm summer weather" width="400" height="275" loading="lazy">
+              <img src="assets/images/services-summer-trim.png" alt="Clean trimmed dog for active warm summer weather"
+                width="400" height="275" loading="lazy">
               <span class="pet-card-tag" style="background-color: #3B7A57;">Warm Weather</span>
             </div>
             <div class="service-card-body">
@@ -571,19 +662,26 @@
               </div>
               <h3 class="service-card-title">Summer De-Bulk &amp; Sanitary Trim</h3>
               <p class="service-card-desc">
-                Cooling coat shortening with belly clearance, eye-clearing trim, and sanitary area cleanup for active pets who love parks, beaches, and hiking.
+                Cooling coat shortening with belly clearance, eye-clearing trim, and sanitary area cleanup for active
+                pets who love parks, beaches, and hiking.
               </p>
               <div class="service-card-perks">
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Cooling low-maintenance coat clip</span>
                 </div>
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Sanitary &amp; belly hygiene clip</span>
                 </div>
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Eye clearance &amp; chin shaping</span>
                 </div>
               </div>
@@ -592,7 +690,8 @@
                   $85.00
                   <small>Hygiene &amp; comfort cut</small>
                 </div>
-                <a href="#booking-form" class="btn btn-primary btn-sm btn-pill" data-select-service="Summer De-Bulk & Sanitary Trim">Book Style</a>
+                <a href="#booking-form" class="btn btn-primary btn-sm btn-pill"
+                  data-select-service="Summer De-Bulk & Sanitary Trim">Book Style</a>
               </div>
             </div>
           </article>
@@ -600,7 +699,8 @@
           <!-- Card 4: Feline Lion Cut -->
           <article class="service-item-card" id="service-feline-lion">
             <div class="service-card-media">
-              <img src="assets/images/services-feline-lion.png" alt="Beautiful groomed longhair cat with lion cut" width="400" height="275" loading="lazy">
+              <img src="assets/images/services-feline-lion.png" alt="Beautiful groomed longhair cat with lion cut"
+                width="400" height="275" loading="lazy">
               <span class="pet-card-tag" style="background-color: var(--brand-forest);">Cat Specialty</span>
             </div>
             <div class="service-card-body">
@@ -610,19 +710,26 @@
               </div>
               <h3 class="service-card-title">Feline Lion Cut &amp; Plush Comb Trim</h3>
               <p class="service-card-desc">
-                Fear-free haircut tailored for longhaired cats. Features a smooth body trim with majestic lion mane, plush boots, and pom-pom tail to stop coat mats.
+                Fear-free haircut tailored for longhaired cats. Features a smooth body trim with majestic lion mane,
+                plush boots.
               </p>
               <div class="service-card-perks">
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Whisper-quiet cat-only clipper work</span>
                 </div>
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Lion mane, cuffs &amp; pom-pom tail</span>
                 </div>
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Lavender calming aromatics</span>
                 </div>
               </div>
@@ -631,7 +738,8 @@
                   $105.00
                   <small>Zero barking dogs nearby</small>
                 </div>
-                <a href="#booking-form" class="btn btn-primary btn-sm btn-pill" data-select-service="Feline Lion Cut & Plush Comb Trim">Book Style</a>
+                <a href="#booking-form" class="btn btn-primary btn-sm btn-pill"
+                  data-select-service="Feline Lion Cut & Plush Comb Trim">Book Style</a>
               </div>
             </div>
           </article>
@@ -646,21 +754,23 @@
          ========================================================================== -->
     <section class="section" id="add-ons">
       <div class="container">
-        
+
         <div class="section-header">
           <span class="pill-badge">WELLNESS ADD-ONS</span>
           <h2 class="section-title">Hygiene Enhancements &amp; A La Carte Care</h2>
           <p class="section-subtitle">
-            Supplement any bath or haircut session with our specialized nail dremel filing, ultrasonic teeth cleaning, and tear-stain blueberry facials.
+            Supplement any bath or haircut session with our specialized nail dremel filing, ultrasonic teeth cleaning,
+            and tear-stain blueberry facials.
           </p>
         </div>
 
         <div class="services-grid-4">
-          
+
           <!-- Add-on 1: Pawdicure & Dremel -->
           <article class="service-item-card" id="addon-pawdicure">
             <div class="service-card-media">
-              <img src="assets/images/services-pawdicure-dremel.png" alt="Deluxe paw rotary dremel smoothing" width="400" height="275" loading="lazy">
+              <img src="assets/images/services-pawdicure-dremel.png" alt="Deluxe paw rotary dremel smoothing"
+                width="400" height="275" loading="lazy">
               <span class="pet-card-tag">Add-on Item</span>
             </div>
             <div class="service-card-body">
@@ -670,19 +780,26 @@
               </div>
               <h3 class="service-card-title">Deluxe Pawdicure &amp; Dremel Filing</h3>
               <p class="service-card-desc">
-                Diamond rotary dremel grinding to gently shorten and round sharp claw edges, followed by organic shea butter and beeswax paw pad balm.
+                Diamond rotary dremel grinding to gently shorten and round sharp claw edges, followed by organic shea
+                butter and beeswax paw pad balm.
               </p>
               <div class="service-card-perks">
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Smooth round finish (no scratches)</span>
                 </div>
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Toe tuft trimming between pads</span>
                 </div>
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Shea butter paw pad balm massage</span>
                 </div>
               </div>
@@ -691,7 +808,8 @@
                   +$25.00
                   <small>Add to any bath or trim</small>
                 </div>
-                <a href="#booking-form" class="btn btn-outline btn-sm btn-pill" data-select-service="Deluxe Pawdicure & Dremel Filing">Add to Visit</a>
+                <a href="#booking-form" class="btn btn-outline btn-sm btn-pill"
+                  data-select-service="Deluxe Pawdicure & Dremel Filing">Add to Visit</a>
               </div>
             </div>
           </article>
@@ -699,7 +817,8 @@
           <!-- Add-on 2: Ultrasonic Teeth Scrub -->
           <article class="service-item-card" id="addon-teeth">
             <div class="service-card-media">
-              <img src="assets/images/services-teeth-brushing.png" alt="Happy dog receiving gentle ultrasonic teeth brushing" width="400" height="275" loading="lazy">
+              <img src="assets/images/services-teeth-brushing.png"
+                alt="Happy dog receiving gentle ultrasonic teeth brushing" width="400" height="275" loading="lazy">
               <span class="pet-card-tag">Oral Health</span>
             </div>
             <div class="service-card-body">
@@ -709,19 +828,26 @@
               </div>
               <h3 class="service-card-title">Ultrasonic Teeth Scrub &amp; Mint Foam</h3>
               <p class="service-card-desc">
-                Enzymatic plaque-loosening gel applied with soft ultrasonic vibration brush, finished with refreshing chlorophyll breath spritz for fresh kisses.
+                Enzymatic plaque-loosening gel applied with soft ultrasonic vibration brush, finished with refreshing
+                chlorophyll breath spritz for fresh kisses.
               </p>
               <div class="service-card-perks">
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Enzymatic plaque softening gel</span>
                 </div>
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Soft ultrasonic gentle brushing</span>
                 </div>
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Natural chlorophyll breath spray</span>
                 </div>
               </div>
@@ -730,7 +856,8 @@
                   +$28.00
                   <small>Add to any bath or trim</small>
                 </div>
-                <a href="#booking-form" class="btn btn-outline btn-sm btn-pill" data-select-service="Ultrasonic Teeth Scrub & Mint Foam">Add to Visit</a>
+                <a href="#booking-form" class="btn btn-outline btn-sm btn-pill"
+                  data-select-service="Ultrasonic Teeth Scrub & Mint Foam">Add to Visit</a>
               </div>
             </div>
           </article>
@@ -738,7 +865,8 @@
           <!-- Add-on 3: Blueberry Facial -->
           <article class="service-item-card" id="addon-facial">
             <div class="service-card-media">
-              <img src="assets/images/user/user_attach3_blueberry_facial.jpg" alt="Dog receiving blueberry facial scrub treatment" width="400" height="275" loading="lazy">
+              <img src="assets/images/user/user_attach3_blueberry_facial.jpg"
+                alt="Dog receiving blueberry facial scrub treatment" width="400" height="275" loading="lazy">
               <span class="pet-card-tag">Aromatherapy</span>
             </div>
             <div class="service-card-body">
@@ -748,19 +876,26 @@
               </div>
               <h3 class="service-card-title">Soothing Blueberry Facial &amp; Tear Flush</h3>
               <p class="service-card-desc">
-                Relaxing antioxidant facial massage that gently lightens dark tear stains, removes food odors from beards, and soothes tired eyes.
+                Relaxing antioxidant facial massage that gently lightens dark tear stains, removes food odors from
+                beards, and soothes tired eyes.
               </p>
               <div class="service-card-perks">
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Tearless blueberry antioxidant foam</span>
                 </div>
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Warm lavender facial compress</span>
                 </div>
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Gentle jaw &amp; brow massage</span>
                 </div>
               </div>
@@ -769,7 +904,8 @@
                   +$20.00
                   <small>Add to any bath or trim</small>
                 </div>
-                <a href="#booking-form" class="btn btn-outline btn-sm btn-pill" data-select-service="Soothing Blueberry Facial & Tear Flush">Add to Visit</a>
+                <a href="#booking-form" class="btn btn-outline btn-sm btn-pill"
+                  data-select-service="Soothing Blueberry Facial & Tear Flush">Add to Visit</a>
               </div>
             </div>
           </article>
@@ -777,7 +913,8 @@
           <!-- Add-on 4: Flea & Tick Botanical Defense -->
           <article class="service-item-card" id="addon-fleatick">
             <div class="service-card-media">
-              <img src="assets/images/user/user_attach4_fleatick_spray.jpg" alt="Corgi with botanical flea and tick defense spray" width="400" height="275" loading="lazy">
+              <img src="assets/images/user/user_attach4_fleatick_spray.jpg"
+                alt="Corgi with botanical flea and tick defense spray" width="400" height="275" loading="lazy">
               <span class="pet-card-tag">Pest Defense</span>
             </div>
             <div class="service-card-body">
@@ -787,19 +924,26 @@
               </div>
               <h3 class="service-card-title">Flea &amp; Tick Botanical Defense Rinse</h3>
               <p class="service-card-desc">
-                100% pesticide-free cedarwood, neem, and peppermint therapeutic bath that eliminates pests instantly while soothing bite irritation.
+                100% pesticide-free cedarwood, neem, and peppermint therapeutic bath that eliminates pests instantly
+                while soothing bite irritation.
               </p>
               <div class="service-card-perks">
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Natural cedar &amp; neem pest wash</span>
                 </div>
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Cools &amp; relieves existing bug bites</span>
                 </div>
                 <div class="service-perk-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <span>Leaves protective botanical barrier</span>
                 </div>
               </div>
@@ -808,7 +952,8 @@
                   +$30.00
                   <small>Add to any bath or trim</small>
                 </div>
-                <a href="#booking-form" class="btn btn-outline btn-sm btn-pill" data-select-service="Flea & Tick Botanical Defense Rinse">Add to Visit</a>
+                <a href="#booking-form" class="btn btn-outline btn-sm btn-pill"
+                  data-select-service="Flea & Tick Botanical Defense Rinse">Add to Visit</a>
               </div>
             </div>
           </article>
@@ -823,27 +968,31 @@
          ========================================================================== -->
     <section class="process-section" id="grooming-process">
       <div class="container">
-        
+
         <div class="section-header">
           <span class="pill-badge terracotta">UNCOMPROMISING STANDARDS</span>
           <h2 class="section-title">Our Comfort, Safety &amp; Hygiene Ritual</h2>
           <p class="section-subtitle">
-            How our self-contained Mercedes Sprinter mobile salon eliminates traditional salon stress, cage drying, and cross-contamination.
+            How our self-contained Mercedes Sprinter mobile salon eliminates traditional salon stress, cage drying, and
+            cross-contamination.
           </p>
         </div>
 
         <div class="process-pillars-grid">
-          
+
           <!-- Pillar 1 -->
           <div class="process-pillar-card">
             <div class="process-icon-box">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                </path>
               </svg>
             </div>
             <h3 class="process-pillar-title">1-on-1 Cage-Free Care</h3>
             <p class="process-pillar-desc">
-              Your pet is never put in a cage, cage-bank, or left unattended. They enjoy 100% undivided attention from a certified groomer from greeting to handover.
+              Your pet is never put in a cage, cage-bank, or left unattended. They enjoy 100% undivided attention from a
+              certified groomer from greeting to handover.
             </p>
           </div>
 
@@ -856,7 +1005,8 @@
             </div>
             <h3 class="process-pillar-title">Medical-Grade Sanitization</h3>
             <p class="process-pillar-desc">
-              Stainless steel tub, hydraulic table, clipper blades, and air systems are disinfected with hospital-grade Virkon spray and UV-C sterilization between every pet.
+              Stainless steel tub, hydraulic table, clipper blades, and air systems are disinfected with hospital-grade
+              Virkon spray and UV-C sterilization between every pet.
             </p>
           </div>
 
@@ -871,7 +1021,8 @@
             </div>
             <h3 class="process-pillar-title">Whisper Lithium Power</h3>
             <p class="process-pillar-desc">
-              Equipped with high-capacity silent lithium solar battery banks and whisper pumps. No smelly, loud external generators to frighten sensitive pet ears.
+              Equipped with high-capacity silent lithium solar battery banks and whisper pumps. No smelly, loud external
+              generators to frighten sensitive pet ears.
             </p>
           </div>
 
@@ -887,7 +1038,8 @@
             </div>
             <h3 class="process-pillar-title">Species-Specific Handling</h3>
             <p class="process-pillar-desc">
-              Feline sessions are booked during dedicated quiet hours with lavender aromatherapy. Low-angle hydraulic ramps accommodate senior pets with arthritis.
+              Feline sessions are booked during dedicated quiet hours with lavender aromatherapy. Low-angle hydraulic
+              ramps accommodate senior pets with arthritis.
             </p>
           </div>
 
@@ -901,18 +1053,19 @@
          ========================================================================== -->
     <section class="booking-section" id="booking-form">
       <div class="container">
-        
+
         <div class="section-header">
           <span class="pill-badge">EASY DRIVEWAY RESERVATIONS</span>
           <h2 class="section-title">Book Your Pet’s Van Spa Visit</h2>
           <p class="section-subtitle">
-            Follow three simple steps to reserve your driveway grooming window. We arrive fully self-contained right outside your home.
+            Follow three simple steps to reserve your driveway grooming window. We arrive fully self-contained right
+            outside your home.
           </p>
         </div>
 
         <!-- 3 Step Badges -->
         <div class="booking-steps-wrapper">
-          
+
           <div class="booking-step-badge">
             <div class="booking-step-num">1</div>
             <div class="booking-step-info">
@@ -941,16 +1094,18 @@
 
         <!-- Interactive Appointment Form -->
         <div class="booking-form-card">
-          
+
           <div style="text-align: center; margin-bottom: 2rem;">
-            <h3 style="font-size: 1.6rem; color: var(--text-heading); margin-bottom: 0.5rem;">Reserve Driveway Van Appointment</h3>
+            <h3 style="font-size: 1.6rem; color: var(--text-heading); margin-bottom: 0.5rem;">Reserve Driveway Van
+              Appointment</h3>
             <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0;">
               No payment required until your pet's appointment is completed and you're 100% delighted!
             </p>
           </div>
 
-          <form id="appointment-booking-form" onsubmit="event.preventDefault(); alert('Appointment Reserved! Our dispatch team will call you within 15 minutes to confirm your driveway arrival window.');">
-            
+          <form id="appointment-booking-form"
+            onsubmit="event.preventDefault(); alert('Appointment Reserved! Our dispatch team will call you within 15 minutes to confirm your driveway arrival window.');">
+
             <div class="form-grid-2">
               <div class="form-group">
                 <label for="book-owner-name">Your Full Name *</label>
@@ -989,11 +1144,14 @@
                   <option value="Signature Hydrobath & Blowout">Signature Hydrobath &amp; Blowout ($75+)</option>
                   <option value="Deep Undercoat De-Shedding Bath">Deep Undercoat De-Shedding Bath ($95+)</option>
                   <option value="Hypoallergenic & Relief Soak">Hypoallergenic &amp; Relief Soak ($85+)</option>
-                  <option value="Puppy & Kitten First Spa Encounter">Puppy &amp; Kitten First Spa Encounter ($60+)</option>
+                  <option value="Puppy & Kitten First Spa Encounter">Puppy &amp; Kitten First Spa Encounter ($60+)
+                  </option>
                   <option value="Signature Breed Standard Styling">Signature Breed Standard Styling ($110+)</option>
-                  <option value="Full Teddy Bear & Plush Puppy Cut">Full Teddy Bear &amp; Plush Puppy Cut ($95+)</option>
+                  <option value="Full Teddy Bear & Plush Puppy Cut">Full Teddy Bear &amp; Plush Puppy Cut ($95+)
+                  </option>
                   <option value="Summer De-Bulk & Sanitary Trim">Summer De-Bulk &amp; Sanitary Trim ($85+)</option>
-                  <option value="Feline Lion Cut & Plush Comb Trim">Feline Lion Cut &amp; Plush Comb Trim ($105+)</option>
+                  <option value="Feline Lion Cut & Plush Comb Trim">Feline Lion Cut &amp; Plush Comb Trim ($105+)
+                  </option>
                 </select>
               </div>
 
@@ -1007,7 +1165,8 @@
             <div class="form-grid-2">
               <div class="form-group">
                 <label for="book-address">Street Address (Driveway Location) *</label>
-                <input type="text" id="book-address" class="form-control" placeholder="e.g. 742 Evergreen Terrace" required>
+                <input type="text" id="book-address" class="form-control" placeholder="e.g. 742 Evergreen Terrace"
+                  required>
               </div>
 
               <div class="form-group">
@@ -1018,18 +1177,22 @@
 
             <div class="form-group" style="margin-bottom: 2rem;">
               <label for="book-notes">Special Pet Care Notes (Temperament, allergies, or senior needs)</label>
-              <textarea id="book-notes" class="form-control" rows="3" placeholder="Tell our groomer anything special: e.g. 'Nervous around paws touched', 'Requires sensitive shampoo', 'Likes liver treats'"></textarea>
+              <textarea id="book-notes" class="form-control" rows="3"
+                placeholder="Tell our groomer anything special: e.g. 'Nervous around paws touched', 'Requires sensitive shampoo', 'Likes liver treats'"></textarea>
             </div>
 
-            <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+            <div
+              style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
               <div>
-                <button type="submit" class="btn btn-primary btn-pill" style="padding: 1rem 2.25rem; font-size: 1.05rem;">
+                <button type="submit" class="btn btn-primary btn-pill"
+                  style="padding: 1rem 2.25rem; font-size: 1.05rem;">
                   <span>Confirm Driveway Reservation</span>
                   <span>&rarr;</span>
                 </button>
               </div>
               <div style="font-size: 0.88rem; color: var(--text-muted);">
-                Need immediate appointment? Call <a href="tel:+18005557297" style="color: var(--brand-forest); font-weight: 700; text-decoration: underline;">(800) 555-PAWS</a>
+                Need immediate appointment? Call <a href="tel:+18005557297"
+                  style="color: var(--brand-forest); font-weight: 700; text-decoration: underline;">(800) 555-PAWS</a>
               </div>
             </div>
 
@@ -1053,7 +1216,8 @@
           <span class="cta-eyebrow">READY FOR A HAPPIER, CALMER PET?</span>
           <h2 class="cta-title">Bring the Luxury Spa Experience Right to Your Driveway</h2>
           <p class="cta-desc">
-            No stressful car rides, no noisy cage drying, and no multi-hour salon waits. One gentle groomer, warm purified water, and 1-on-1 devotion right outside your doorstep.
+            No stressful car rides, no noisy cage drying, and no multi-hour salon waits. One gentle groomer, warm
+            purified water, and 1-on-1 devotion right outside your doorstep.
           </p>
 
           <div class="hero-btn-group" style="justify-content: center; margin-bottom: 28px;">
@@ -1083,8 +1247,8 @@
        ========================================================================== -->
   <footer class="site-footer" id="site-footer">
     <div class="container">
-            <div class="footer-top-grid">
-        
+      <div class="footer-top-grid">
+
         <!-- Col 1: Brand Info & Bio -->
         <div class="footer-brand">
           <a href="index.html" class="brand-logo" aria-label="Velvet Paws">
@@ -1097,17 +1261,30 @@
             </div>
           </a>
           <p>
-            Experience the gold standard in mobile pet pampering. Our state-of-the-art Mercedes Sprinter grooming vans arrive directly at your residence, fully self-contained with purified heated water, climate control, and gentle certified groomers.
+            Experience the gold standard in mobile pet pampering. Our state-of-the-art Mercedes Sprinter grooming vans
+            arrive directly at your residence, fully self-contained with purified heated water, climate control, and
+            gentle certified groomers.
           </p>
           <div class="footer-socials">
             <a href="contact.html#social" class="footer-social-btn" aria-label="Facebook">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
             </a>
             <a href="contact.html#social" class="footer-social-btn" aria-label="Instagram">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
             </a>
             <a href="contact.html#social" class="footer-social-btn" aria-label="YouTube">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+                </path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
             </a>
           </div>
         </div>
@@ -1143,28 +1320,41 @@
         <div>
           <h5 class="footer-col-title">Contact &amp; Driveway Hours</h5>
           <div class="footer-contact-item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+              </path>
+            </svg>
             <div>
               <strong style="display:block; color:#FFFFFF;">Direct Phone Hotline</strong>
               <a href="tel:+18005557297">(800) 555-PAWS</a>
             </div>
           </div>
           <div class="footer-contact-item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
             <div>
               <strong style="display:block; color:#FFFFFF;">Email Concierge</strong>
               <a href="mailto:hello@velvetpawsvan.com">hello@velvetpawsvan.com</a>
             </div>
           </div>
           <div class="footer-contact-item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
             <div>
               <strong style="display:block; color:#FFFFFF;">Operating Hours</strong>
               <span>Mon – Sun: 7:30 AM – 7:00 PM</span>
             </div>
           </div>
           <div class="footer-contact-item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
             <div>
               <strong style="display:block; color:#FFFFFF;">Central Dispatch Hub</strong>
               <span>100 Driveway Concierge Way, Suite 400</span>
@@ -1193,12 +1383,12 @@
 
   <!-- Auto-select service in booking form if clicked from service card -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const selectServiceBtns = document.querySelectorAll('[data-select-service]');
       const serviceSelectInput = document.getElementById('book-service-select');
 
-      selectServiceBtns.forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
+      selectServiceBtns.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
           const serviceName = btn.getAttribute('data-select-service');
           if (serviceSelectInput && serviceName) {
             for (let i = 0; i < serviceSelectInput.options.length; i++) {
@@ -1214,4 +1404,5 @@
   </script>
 
 </body>
+
 </html>
