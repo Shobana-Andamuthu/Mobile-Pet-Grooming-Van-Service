@@ -3983,10 +3983,15 @@ p:last-child {
   justify-content: flex-start;
   gap: 0.55rem;
   padding: 0.85rem 0;
-  border-top: 1px dashed var(--border-color);
-  border-bottom: 1px dashed var(--border-color);
+  border-top: 1px dashed rgba(46, 75, 56, 0.25);
+  border-bottom: 1px dashed rgba(46, 75, 56, 0.25);
   margin-bottom: 1rem;
   min-height: 6.2rem;
+}
+
+[data-theme="dark"] .service-card-perks {
+  border-top-color: rgba(220, 233, 221, 0.28);
+  border-bottom-color: rgba(220, 233, 221, 0.28);
 }
 
 .service-perk-item {
